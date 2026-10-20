@@ -3,952 +3,1088 @@
     "source": "scripts/train.py",
     "published": "scripts/train.py",
     "source_sha256": "43a4bdb26b38405179a6a8b49315f71b18d2d2878d8b9752610e0d4a0b9dd5b6",
-    "published_sha256": "e264cf7f330af09a80fb735a92e0c9d406da672046a499a79bef9d062035d619",
-    "paths_portabilized": false
+    "published_sha256": "43a4bdb26b38405179a6a8b49315f71b18d2d2878d8b9752610e0d4a0b9dd5b6",
+    "paths_portabilized": false,
+    "working_copy_sha256": "e264cf7f330af09a80fb735a92e0c9d406da672046a499a79bef9d062035d619"
   },
   {
     "source": "scripts/train_mm.py",
     "published": "scripts/train_mm.py",
     "source_sha256": "c5d3d291ba1d7150b085093242bd9c8b9cf8f24ce668307d768ff3de2d2c6dc0",
-    "published_sha256": "6b5908e7922f410cf4352c8f793c6c9a48d9a0408d8042b8051ae29353604a3d",
-    "paths_portabilized": false
+    "published_sha256": "c5d3d291ba1d7150b085093242bd9c8b9cf8f24ce668307d768ff3de2d2c6dc0",
+    "paths_portabilized": false,
+    "working_copy_sha256": "6b5908e7922f410cf4352c8f793c6c9a48d9a0408d8042b8051ae29353604a3d"
   },
   {
     "source": "scripts/predict.py",
     "published": "scripts/predict.py",
     "source_sha256": "92d0e71bc5877c814d574c63921b58c9cd3b832aa4f44be07c7c08c96453abb0",
-    "published_sha256": "2093d56a8dca4422a606c2d59338b531efdf0959464a086a2be601c8767c0deb",
-    "paths_portabilized": false
+    "published_sha256": "92d0e71bc5877c814d574c63921b58c9cd3b832aa4f44be07c7c08c96453abb0",
+    "paths_portabilized": false,
+    "working_copy_sha256": "2093d56a8dca4422a606c2d59338b531efdf0959464a086a2be601c8767c0deb"
   },
   {
     "source": "scripts/predict_submit_tta.py",
     "published": "scripts/predict_submit_tta.py",
     "source_sha256": "3f1febe333c643c54f02d7630c3e19bd9d5039f24644c5c528ef1386ee2f5510",
-    "published_sha256": "0e4099c53fab34d01ad89d731fad3719fbc4c6c926b0b08364805b02b9a108e8",
-    "paths_portabilized": false
+    "published_sha256": "3f1febe333c643c54f02d7630c3e19bd9d5039f24644c5c528ef1386ee2f5510",
+    "paths_portabilized": false,
+    "working_copy_sha256": "0e4099c53fab34d01ad89d731fad3719fbc4c6c926b0b08364805b02b9a108e8"
   },
   {
     "source": "scripts/dfine_run.py",
     "published": "scripts/dfine_run.py",
     "source_sha256": "aff41259db599c367f8b11f6e1ddfead748cd686322f3a94b6c93ee941457cce",
-    "published_sha256": "70e7e1185636b9e849d1d0cc512b13c99484a3046502810df3dbd5be9ea9443c",
-    "paths_portabilized": true
+    "published_sha256": "e387d0cfa95e215a3204e401cbf9a25e750e7536dd68a18f9b62a6e1447f9615",
+    "paths_portabilized": true,
+    "working_copy_sha256": "70e7e1185636b9e849d1d0cc512b13c99484a3046502810df3dbd5be9ea9443c"
   },
   {
     "source": "scripts/dfine_infer.py",
     "published": "scripts/dfine_infer.py",
     "source_sha256": "7c20b297f09634e5f79b2491c53be4f87206f5c8c402226c41f12c33c05f8611",
-    "published_sha256": "71670a8ef9da001e915ac81d44674f75621fbf4d039dda6c50403d284c66e391",
-    "paths_portabilized": false
+    "published_sha256": "7c20b297f09634e5f79b2491c53be4f87206f5c8c402226c41f12c33c05f8611",
+    "paths_portabilized": false,
+    "working_copy_sha256": "71670a8ef9da001e915ac81d44674f75621fbf4d039dda6c50403d284c66e391"
   },
   {
     "source": "scripts/dfine_infer_rect.py",
     "published": "scripts/dfine_infer_rect.py",
     "source_sha256": "764133ed742e52dcdaaf62fdebf570bb6a966db485ad35cc85a22a6fa62d08a8",
-    "published_sha256": "a99f6710b43df8273fb4f431a0587410d42482cebdbfc8218dcccedab3df2144",
-    "paths_portabilized": false
+    "published_sha256": "764133ed742e52dcdaaf62fdebf570bb6a966db485ad35cc85a22a6fa62d08a8",
+    "paths_portabilized": false,
+    "working_copy_sha256": "a99f6710b43df8273fb4f431a0587410d42482cebdbfc8218dcccedab3df2144"
   },
   {
     "source": "scripts/dfine_mm_infer.py",
     "published": "scripts/dfine_mm_infer.py",
     "source_sha256": "079956df3c06bad9f281b8f88c5e50bfaf9d0f751432ca766ccc781cc96292a5",
-    "published_sha256": "df927c95b1d83f33f6ca014613022c2f12c5c3df57a41f85b2faa48b3df12955",
-    "paths_portabilized": true
+    "published_sha256": "33a36751f5d614ae30214b27d0fddfded435618daef3effec337becdfeded0b4",
+    "paths_portabilized": true,
+    "working_copy_sha256": "df927c95b1d83f33f6ca014613022c2f12c5c3df57a41f85b2faa48b3df12955"
   },
   {
     "source": "scripts/local_tile_infer.py",
     "published": "scripts/local_tile_infer.py",
     "source_sha256": "9838e502f54b8036fd2f92813b3ae9342c965d47b8cb12d7b51dd7abad1f67b5",
-    "published_sha256": "d398292e0d60fe56f94a2751ea0cf164a5fbc5074fd0dd0c484bf172586e7ab5",
-    "paths_portabilized": false
+    "published_sha256": "9838e502f54b8036fd2f92813b3ae9342c965d47b8cb12d7b51dd7abad1f67b5",
+    "paths_portabilized": false,
+    "working_copy_sha256": "d398292e0d60fe56f94a2751ea0cf164a5fbc5074fd0dd0c484bf172586e7ab5"
   },
   {
     "source": "scripts/imgio.py",
     "published": "scripts/imgio.py",
     "source_sha256": "14594f232a2cd966174e181344852d62be584a44b81f30727af157363e86c578",
-    "published_sha256": "98bd82c5141a20ca7b791117b587954d4447d0a5f2462d6953bebb68c12321d7",
-    "paths_portabilized": false
+    "published_sha256": "14594f232a2cd966174e181344852d62be584a44b81f30727af157363e86c578",
+    "paths_portabilized": false,
+    "working_copy_sha256": "98bd82c5141a20ca7b791117b587954d4447d0a5f2462d6953bebb68c12321d7"
   },
   {
     "source": "scripts/check_submission.py",
     "published": "scripts/check_submission.py",
     "source_sha256": "b3aa37ba6c1aa1f1fc3c8ab5c48b57b94fd19952a8981e177dcae3065b9e4f1e",
-    "published_sha256": "03cea80fc8225648548ab7ccce8878bc6192005d4931c7e1506379a84c772c76",
-    "paths_portabilized": false
+    "published_sha256": "b3aa37ba6c1aa1f1fc3c8ab5c48b57b94fd19952a8981e177dcae3065b9e4f1e",
+    "paths_portabilized": false,
+    "working_copy_sha256": "03cea80fc8225648548ab7ccce8878bc6192005d4931c7e1506379a84c772c76"
   },
   {
     "source": "scripts/make_rare_oversample_json.py",
     "published": "scripts/make_rare_oversample_json.py",
     "source_sha256": "be6ea3edfba9409752ba1937c0aa62e0d85f146e08f5c0fe034ee037fdf97b8c",
-    "published_sha256": "8dbcc5a9bd3dbb1576c1914ff007bd3478f086252eacab085525f9067730e9a9",
-    "paths_portabilized": false
+    "published_sha256": "073bd0fd3579ffd3d6c9436bba14377f26641ba40dc571da16e8880b36f20932",
+    "paths_portabilized": false,
+    "working_copy_sha256": "8dbcc5a9bd3dbb1576c1914ff007bd3478f086252eacab085525f9067730e9a9"
   },
   {
     "source": "scripts/diag_cocoeval_check.py",
     "published": "scripts/diag_cocoeval_check.py",
     "source_sha256": "07a665c8b05f373ecdd1f3b972ae7c1180e116a481cd7c12e722ae60f193e953",
-    "published_sha256": "adea86ac818ff7a1445790abc496aa9645d936348309b07c80ab5eec81529b5c",
-    "paths_portabilized": false
+    "published_sha256": "07a665c8b05f373ecdd1f3b972ae7c1180e116a481cd7c12e722ae60f193e953",
+    "paths_portabilized": false,
+    "working_copy_sha256": "adea86ac818ff7a1445790abc496aa9645d936348309b07c80ab5eec81529b5c"
   },
   {
     "source": "scripts/diag_family_class.py",
     "published": "scripts/diag_family_class.py",
     "source_sha256": "3bde27d9e825c1b2f95b08b325aaa31c63b1c846dd5b5d631ff0572d05055b04",
-    "published_sha256": "58296592f30475bf1c3b00e1aa96818bbc506ceab8fb1ad86c369cac8f0408a8",
-    "paths_portabilized": false
+    "published_sha256": "3bde27d9e825c1b2f95b08b325aaa31c63b1c846dd5b5d631ff0572d05055b04",
+    "paths_portabilized": false,
+    "working_copy_sha256": "58296592f30475bf1c3b00e1aa96818bbc506ceab8fb1ad86c369cac8f0408a8"
   },
   {
     "source": "scripts/diag_family_mix.py",
     "published": "scripts/diag_family_mix.py",
     "source_sha256": "03d03a06f803e419fa90e7e8cc54a0f1f01d661ba4cbb1c321be7656538b33a3",
-    "published_sha256": "db88282a0fa491caee4105d1fa12be84c3148322df5881e81e2871d620d103ec",
-    "paths_portabilized": false
+    "published_sha256": "03d03a06f803e419fa90e7e8cc54a0f1f01d661ba4cbb1c321be7656538b33a3",
+    "paths_portabilized": false,
+    "working_copy_sha256": "db88282a0fa491caee4105d1fa12be84c3148322df5881e81e2871d620d103ec"
   },
   {
     "source": "scripts/diag_family_stats.py",
     "published": "scripts/diag_family_stats.py",
     "source_sha256": "8df3e6fd602eaeaf1764b87fb3eacf1a503b6113a2e989275c8748bf325f6520",
-    "published_sha256": "077ea794460561b564c332f36cff281391ed679a942e7ee2874e15a3591e1a48",
-    "paths_portabilized": false
+    "published_sha256": "8df3e6fd602eaeaf1764b87fb3eacf1a503b6113a2e989275c8748bf325f6520",
+    "paths_portabilized": false,
+    "working_copy_sha256": "077ea794460561b564c332f36cff281391ed679a942e7ee2874e15a3591e1a48"
   },
   {
     "source": "scripts/diag_error_breakdown.py",
     "published": "scripts/diag_error_breakdown.py",
     "source_sha256": "ec9cfe4b8df09043fbecba01d69a3e553309ab99cbf011905268aa457cd396a0",
-    "published_sha256": "d10e3541e6fd6ff771cedbc8342fd5d055eff38b1b74dc547d3ae92d79c09132",
-    "paths_portabilized": false
+    "published_sha256": "ec9cfe4b8df09043fbecba01d69a3e553309ab99cbf011905268aa457cd396a0",
+    "paths_portabilized": false,
+    "working_copy_sha256": "d10e3541e6fd6ff771cedbc8342fd5d055eff38b1b74dc547d3ae92d79c09132"
   },
   {
     "source": "scripts/dataset_structure_audit.py",
     "published": "scripts/dataset_structure_audit.py",
     "source_sha256": "4620b6f70ae89c67699bc57523c4931d02fe41e6061aa5a7299b94a2545abdcb",
-    "published_sha256": "a4a523a6c0651c1f8829cc2acf49e16e26f45199a50a5649021b0219bf468d7f",
-    "paths_portabilized": true
+    "published_sha256": "1cbb76ea705fbe2c64f117b17aa92ec3616cac19126c5c40830a067558a499a6",
+    "paths_portabilized": true,
+    "working_copy_sha256": "a4a523a6c0651c1f8829cc2acf49e16e26f45199a50a5649021b0219bf468d7f"
   },
   {
     "source": "scripts/mm_infer.py",
     "published": "scripts/mm_infer.py",
     "source_sha256": "4f3af79c7830633cad286fb5af410951c4abc9f4c25feaf44beddb017f85b9a5",
-    "published_sha256": "c609f47efb468385129f92f2545037fa25dd7c7165c036d79a2c6a9e58186e0d",
-    "paths_portabilized": false
+    "published_sha256": "4f3af79c7830633cad286fb5af410951c4abc9f4c25feaf44beddb017f85b9a5",
+    "paths_portabilized": false,
+    "working_copy_sha256": "c609f47efb468385129f92f2545037fa25dd7c7165c036d79a2c6a9e58186e0d"
   },
   {
     "source": "scripts/mm_redundancy.py",
     "published": "scripts/mm_redundancy.py",
     "source_sha256": "a3f4c1ff527e7df3166af579507eaa5b2537c1315d883c6ffd889be2e90247b2",
-    "published_sha256": "fa92852917a6a7966566ae43c7f91aafe7fa73a06946973f8e3007ad29b8c5c1",
-    "paths_portabilized": false
+    "published_sha256": "a3f4c1ff527e7df3166af579507eaa5b2537c1315d883c6ffd889be2e90247b2",
+    "paths_portabilized": false,
+    "working_copy_sha256": "fa92852917a6a7966566ae43c7f91aafe7fa73a06946973f8e3007ad29b8c5c1"
   },
   {
     "source": "src/eval/map_eval.py",
     "published": "src/eval/map_eval.py",
     "source_sha256": "85a1bed1a4ffa3a1507d3408682f620acec8ecca9064cd732437657b4d732abb",
-    "published_sha256": "853aabb9fb4f99702baedeb0eac4657115e3a901b6a66aea8ea2ce8e56427d21",
-    "paths_portabilized": false
+    "published_sha256": "85a1bed1a4ffa3a1507d3408682f620acec8ecca9064cd732437657b4d732abb",
+    "paths_portabilized": false,
+    "working_copy_sha256": "853aabb9fb4f99702baedeb0eac4657115e3a901b6a66aea8ea2ce8e56427d21"
   },
   {
     "source": "src/eval/test_map_eval.py",
     "published": "src/eval/test_map_eval.py",
     "source_sha256": "b3294c3ad7dd361bc97448c888405d292740ec01953f50e7e8168958f559cff8",
-    "published_sha256": "26b734c30e184d44973cd3f92e093c72574e8c9ae2bfc54e92b0883de0f34d97",
-    "paths_portabilized": false
+    "published_sha256": "b3294c3ad7dd361bc97448c888405d292740ec01953f50e7e8168958f559cff8",
+    "paths_portabilized": false,
+    "working_copy_sha256": "26b734c30e184d44973cd3f92e093c72574e8c9ae2bfc54e92b0883de0f34d97"
   },
   {
     "source": "src/eval/perclass_probe.py",
     "published": "src/eval/perclass_probe.py",
     "source_sha256": "9e9ef73eb5e92257398e7aa78fac3b57b524181175e76fa4f177f6c548f1f528",
-    "published_sha256": "92e740a7fdda5c4980ba0f2d60261c3269756afefed9741faf8c30c28f01d103",
-    "paths_portabilized": false
+    "published_sha256": "9e9ef73eb5e92257398e7aa78fac3b57b524181175e76fa4f177f6c548f1f528",
+    "paths_portabilized": false,
+    "working_copy_sha256": "92e740a7fdda5c4980ba0f2d60261c3269756afefed9741faf8c30c28f01d103"
   },
   {
     "source": "src/eval/ap_breakdown.py",
     "published": "src/eval/ap_breakdown.py",
     "source_sha256": "216a17f17808aba6a9a14346c7dcddca0b914cd25a5e3bf262aee3e3c13e94f8",
-    "published_sha256": "150c3c89c53362a6d665defa7d2933c96f3dc3937bbfbf357c61060e29d3f92c",
-    "paths_portabilized": false
+    "published_sha256": "216a17f17808aba6a9a14346c7dcddca0b914cd25a5e3bf262aee3e3c13e94f8",
+    "paths_portabilized": false,
+    "working_copy_sha256": "150c3c89c53362a6d665defa7d2933c96f3dc3937bbfbf357c61060e29d3f92c"
   },
   {
     "source": "src/eval/box_bias_probe.py",
     "published": "src/eval/box_bias_probe.py",
     "source_sha256": "726ad8a2bf47952c5f5619ad50a26fd8088371dcb1ea3b80f3016560892f24ba",
-    "published_sha256": "fbdd7309795060aae0742d0ac8dd1e39c0bb818ed244cdaf1504910102846ea0",
-    "paths_portabilized": false
+    "published_sha256": "726ad8a2bf47952c5f5619ad50a26fd8088371dcb1ea3b80f3016560892f24ba",
+    "paths_portabilized": false,
+    "working_copy_sha256": "fbdd7309795060aae0742d0ac8dd1e39c0bb818ed244cdaf1504910102846ea0"
   },
   {
     "source": "src/eval/yolo2coco.py",
     "published": "src/eval/yolo2coco.py",
     "source_sha256": "96ca343c8e1022ad5a93c359feb0117ee84b0dc7fe4c8b319d41ed8816578582",
-    "published_sha256": "1fccd39ef4bf9d9b49bccd0785d958e425e60fe86e3ff61ac21f22e567b52e3d",
-    "paths_portabilized": false
+    "published_sha256": "96ca343c8e1022ad5a93c359feb0117ee84b0dc7fe4c8b319d41ed8816578582",
+    "paths_portabilized": false,
+    "working_copy_sha256": "1fccd39ef4bf9d9b49bccd0785d958e425e60fe86e3ff61ac21f22e567b52e3d"
   },
   {
     "source": "src/eval/make_group_folds.py",
     "published": "src/eval/make_group_folds.py",
     "source_sha256": "5ea6023b372a536f6fce4b5d93468a6df6e7459ce52b1db63d1a94714eadf8f8",
-    "published_sha256": "a3c5ce18280918ff2d69dd3fdbafcb4bbfe1a55b58ded509ca98d71e9327cbc3",
-    "paths_portabilized": true
+    "published_sha256": "952a5f77f20072ab714c84701d9435bb12f25d02bda0ea2c387f074426c0e044",
+    "paths_portabilized": true,
+    "working_copy_sha256": "a3c5ce18280918ff2d69dd3fdbafcb4bbfe1a55b58ded509ca98d71e9327cbc3"
   },
   {
     "source": "src/eval/build_temporal_groups.py",
     "published": "src/eval/build_temporal_groups.py",
     "source_sha256": "e5a802e0a6a3960b44e77944f8a0bce6b3c15b8160c3c68f49c7d08430f2c42e",
-    "published_sha256": "8ad686252822618be6d68260de3f04be323fb1bc7d9fd20483ba1b76e094abf8",
-    "paths_portabilized": false
+    "published_sha256": "e5a802e0a6a3960b44e77944f8a0bce6b3c15b8160c3c68f49c7d08430f2c42e",
+    "paths_portabilized": false,
+    "working_copy_sha256": "8ad686252822618be6d68260de3f04be323fb1bc7d9fd20483ba1b76e094abf8"
   },
   {
     "source": "src/eval/paired_analysis.py",
     "published": "src/eval/paired_analysis.py",
     "source_sha256": "f9a71fc58cca2db061eb665c17daf1c8a7d0f0bbadcdc35fc4ed83c43e4b59d8",
-    "published_sha256": "18d3964e368d1dc245ab93478e7c79ea9362e4fa442e93467f8ccd1c127c5cd9",
-    "paths_portabilized": false
+    "published_sha256": "f9a71fc58cca2db061eb665c17daf1c8a7d0f0bbadcdc35fc4ed83c43e4b59d8",
+    "paths_portabilized": false,
+    "working_copy_sha256": "18d3964e368d1dc245ab93478e7c79ea9362e4fa442e93467f8ccd1c127c5cd9"
   },
   {
     "source": "src/mm/depth_codec.py",
     "published": "src/mm/depth_codec.py",
     "source_sha256": "1666e92c24dcf646a708f30fae6b9cf80023232e2aa1091ecafe3d08e9e4c37d",
-    "published_sha256": "b4f49872236461056060d838d261e0d5398780ed9c841eae414e95615a9ae50c",
-    "paths_portabilized": false
+    "published_sha256": "1666e92c24dcf646a708f30fae6b9cf80023232e2aa1091ecafe3d08e9e4c37d",
+    "paths_portabilized": false,
+    "working_copy_sha256": "b4f49872236461056060d838d261e0d5398780ed9c841eae414e95615a9ae50c"
   },
   {
     "source": "src/mm/elong.py",
     "published": "src/mm/elong.py",
     "source_sha256": "653f6c6bf16e4585c33d2b0b0674707ff47423126f866273f2980eead09947ac",
-    "published_sha256": "ea0ec2b1ff933e12cfa8a1f8d1acb331f50620c494a7bcee208156f562e9a5d6",
-    "paths_portabilized": false
+    "published_sha256": "653f6c6bf16e4585c33d2b0b0674707ff47423126f866273f2980eead09947ac",
+    "paths_portabilized": false,
+    "working_copy_sha256": "ea0ec2b1ff933e12cfa8a1f8d1acb331f50620c494a7bcee208156f562e9a5d6"
   },
   {
     "source": "src/mm/fusion.py",
     "published": "src/mm/fusion.py",
     "source_sha256": "a2df84ecd53b88b2326f0c485351ab394e0cfce7fd7e3b7ce428aa7d9f71d388",
-    "published_sha256": "6e96acbf8fd4517be4d2679a285b6f91b9589e13b4f6d536403795dd07238412",
-    "paths_portabilized": false
+    "published_sha256": "a2df84ecd53b88b2326f0c485351ab394e0cfce7fd7e3b7ce428aa7d9f71d388",
+    "paths_portabilized": false,
+    "working_copy_sha256": "6e96acbf8fd4517be4d2679a285b6f91b9589e13b4f6d536403795dd07238412"
   },
   {
     "source": "src/mm/mm_build.py",
     "published": "src/mm/mm_build.py",
     "source_sha256": "983b69fbd04800d0f49df9cd91bde662615457188317d5177d477a69db0e10b8",
-    "published_sha256": "2cb9e2c3b21cf6aeedf6af7bdb2ad34080cf8d151be91c45f533e656fcce517b",
-    "paths_portabilized": false
+    "published_sha256": "983b69fbd04800d0f49df9cd91bde662615457188317d5177d477a69db0e10b8",
+    "paths_portabilized": false,
+    "working_copy_sha256": "2cb9e2c3b21cf6aeedf6af7bdb2ad34080cf8d151be91c45f533e656fcce517b"
   },
   {
     "source": "src/mm/mm_multistage.py",
     "published": "src/mm/mm_multistage.py",
     "source_sha256": "9ad0f7815291403ae4552b1fae7b5d5506da6539aa34cdcf4a46c3e3a7c17953",
-    "published_sha256": "a5c1a444639c89a2c682128d67df80c9fa76d2bd64bb5ef465c714b15786c988",
-    "paths_portabilized": false
+    "published_sha256": "9ad0f7815291403ae4552b1fae7b5d5506da6539aa34cdcf4a46c3e3a7c17953",
+    "paths_portabilized": false,
+    "working_copy_sha256": "a5c1a444639c89a2c682128d67df80c9fa76d2bd64bb5ef465c714b15786c988"
   },
   {
     "source": "src/mm/mm_multistage_rtdetr.py",
     "published": "src/mm/mm_multistage_rtdetr.py",
     "source_sha256": "532776867b1c78e30508d39c85ac1e6298024f9a22c837e33b78b1eadfdadfa3",
-    "published_sha256": "a9264d88c2a5b7b1a7a07d497d417cd209a473df7bb22a0748e504df959e10a8",
-    "paths_portabilized": false
+    "published_sha256": "532776867b1c78e30508d39c85ac1e6298024f9a22c837e33b78b1eadfdadfa3",
+    "paths_portabilized": false,
+    "working_copy_sha256": "a9264d88c2a5b7b1a7a07d497d417cd209a473df7bb22a0748e504df959e10a8"
   },
   {
     "source": "src/mm/mm_patch.py",
     "published": "src/mm/mm_patch.py",
     "source_sha256": "0a9c5b48d4f184a13f4f0fa186119c4ac9352107c58f8527b152d0d70eaace91",
-    "published_sha256": "114eb06322a660c35824622d445f2734fbde23a5c0ae83bca4d6e4c68c80b26c",
-    "paths_portabilized": false
+    "published_sha256": "0a9c5b48d4f184a13f4f0fa186119c4ac9352107c58f8527b152d0d70eaace91",
+    "paths_portabilized": false,
+    "working_copy_sha256": "114eb06322a660c35824622d445f2734fbde23a5c0ae83bca4d6e4c68c80b26c"
   },
   {
     "source": "src/mm/moe_fusion.py",
     "published": "src/mm/moe_fusion.py",
     "source_sha256": "ca1b2136b80e3ca39b9d8141ddb00f05363fd23c38b0dc6af477cb09734baa84",
-    "published_sha256": "bed9a56de22785a2f16cb1d1bb2ac7e2660a306b7d59ec3a9dda18e7ef7c2c01",
-    "paths_portabilized": false
+    "published_sha256": "ca1b2136b80e3ca39b9d8141ddb00f05363fd23c38b0dc6af477cb09734baa84",
+    "paths_portabilized": false,
+    "working_copy_sha256": "bed9a56de22785a2f16cb1d1bb2ac7e2660a306b7d59ec3a9dda18e7ef7c2c01"
   },
   {
     "source": "src/mm/p2_inject.py",
     "published": "src/mm/p2_inject.py",
     "source_sha256": "e485b155f55406798184fa17063fb8dbda9eb4b4a303ee22a5f3542c836a3130",
-    "published_sha256": "73d1fdd2853494c8fe1e5208fdf76918bce4ec25218990544b96af9028fc0241",
-    "paths_portabilized": false
+    "published_sha256": "e485b155f55406798184fa17063fb8dbda9eb4b4a303ee22a5f3542c836a3130",
+    "paths_portabilized": false,
+    "working_copy_sha256": "73d1fdd2853494c8fe1e5208fdf76918bce4ec25218990544b96af9028fc0241"
   },
   {
     "source": "src/mm/rare_paste.py",
     "published": "src/mm/rare_paste.py",
     "source_sha256": "3ae03db562653c4a2b08db820fd15ab46d9683eee6d408e2e9e5851fdf93e173",
-    "published_sha256": "637450d8337fa0afdbdc2c8c7806351afb584203383819a4f5ee20a694475047",
-    "paths_portabilized": false
+    "published_sha256": "3ae03db562653c4a2b08db820fd15ab46d9683eee6d408e2e9e5851fdf93e173",
+    "paths_portabilized": false,
+    "working_copy_sha256": "637450d8337fa0afdbdc2c8c7806351afb584203383819a4f5ee20a694475047"
   },
   {
     "source": "configs/aic_lbproxy.yaml",
     "published": "configs/aic_lbproxy.yaml",
     "source_sha256": "acf2a3160000a19b90fe1a8da4fcdbe759594e02bcd2fcf00b2973e566cd3026",
-    "published_sha256": "f43dfaa8a787c88c9fee0bdd4ed9fbe58708d24f3ba16de0de516e5ec192fcf7",
-    "paths_portabilized": true
+    "published_sha256": "d3cd44f6a3cf2408bba9ca53a69b0ffc95ff09ca6ab6dd2af65b022be5e19056",
+    "paths_portabilized": true,
+    "working_copy_sha256": "f43dfaa8a787c88c9fee0bdd4ed9fbe58708d24f3ba16de0de516e5ec192fcf7"
   },
   {
     "source": "configs/local_rgb_rare.yaml",
     "published": "configs/local_rgb_rare.yaml",
     "source_sha256": "6683faf68cd29fa19d445819831758a673101b3d597eb1a17fddcc6237c32154",
-    "published_sha256": "db61399350576bdc0d35b21dd3ff0d2c41c5255437d7f2d7803fcab3c3c42102",
-    "paths_portabilized": true
+    "published_sha256": "7335b3bbfbf33a88eee4127979289d304968531aed6bf39b6db8c9e6de51db12",
+    "paths_portabilized": true,
+    "working_copy_sha256": "db61399350576bdc0d35b21dd3ff0d2c41c5255437d7f2d7803fcab3c3c42102"
   },
   {
     "source": "configs/local_mm6_rare.yaml",
     "published": "configs/local_mm6_rare.yaml",
     "source_sha256": "876fa43e13b201c474c75dc560f38ff0f39f3e162ee444f646660e32db6ba2f3",
-    "published_sha256": "8aea321d48a243f4c2e4e511115ea5aeeee8fb45d67b7602ef0cbf33cee87cee",
-    "paths_portabilized": true
+    "published_sha256": "2135145d8f9435cf14dfc9ccc834488dc68f2bbf8f11fd0b10f7b1a72047390c",
+    "paths_portabilized": true,
+    "working_copy_sha256": "8aea321d48a243f4c2e4e511115ea5aeeee8fb45d67b7602ef0cbf33cee87cee"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l1536_from_l24e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l1536_from_l24e.yml",
     "source_sha256": "8c3fb41f77090c77477ffbff611f6c601a2aa793aa8acdc54692738f6a3f51ed",
-    "published_sha256": "6569d67566b7f93a62094dc37b23cffc8bd8e24aec312c28a81213c7161e0d6c",
-    "paths_portabilized": true
+    "published_sha256": "8acde8c5e9f8e34417f8fe5b8fb54f9c3409f93d078ec3700c2e2cda8d6d4cdc",
+    "paths_portabilized": true,
+    "working_copy_sha256": "6569d67566b7f93a62094dc37b23cffc8bd8e24aec312c28a81213c7161e0d6c"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_all2000.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_all2000.yml",
     "source_sha256": "077a385f08619337dcb455f35857038e818e8e34b2545f9eef4c4238298e8e83",
-    "published_sha256": "b516b46bfe7b05329382e2d360655458e5c330018e0cbe52947474a909316ef7",
-    "paths_portabilized": false
+    "published_sha256": "077a385f08619337dcb455f35857038e818e8e34b2545f9eef4c4238298e8e83",
+    "paths_portabilized": false,
+    "working_copy_sha256": "b516b46bfe7b05329382e2d360655458e5c330018e0cbe52947474a909316ef7"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_all2000_1536_24e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_all2000_1536_24e.yml",
     "source_sha256": "a55acc507a7395fb230b9909a37b1ff5a18337183db474a6ce3995af111de1e2",
-    "published_sha256": "31646ea6792cbedc44da8214f20d33b33de0e947f23be0759aabc1fccf284433",
-    "paths_portabilized": false
+    "published_sha256": "a55acc507a7395fb230b9909a37b1ff5a18337183db474a6ce3995af111de1e2",
+    "paths_portabilized": false,
+    "working_copy_sha256": "31646ea6792cbedc44da8214f20d33b33de0e947f23be0759aabc1fccf284433"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_all2000_24e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_all2000_24e.yml",
     "source_sha256": "b2a5145d9a05c965ba81a8fab7b198d678d56f48df65d3664bc723ea0a202783",
-    "published_sha256": "332e0b92fa03e6883d751f1de782f5b79ebe5bf8cf5c546a1b0180b8c0c0e72d",
-    "paths_portabilized": false
+    "published_sha256": "b2a5145d9a05c965ba81a8fab7b198d678d56f48df65d3664bc723ea0a202783",
+    "paths_portabilized": false,
+    "working_copy_sha256": "332e0b92fa03e6883d751f1de782f5b79ebe5bf8cf5c546a1b0180b8c0c0e72d"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_famatch_all2000_24e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_famatch_all2000_24e.yml",
     "source_sha256": "3132b16d71e987e16e1a75b8a9cfd782c031b73f147800fea3d8d7afe451d740",
-    "published_sha256": "899b9087c7715cf8f4ecb13ea9a0980839d72ed8baf55e1b48516ab081fecc26",
-    "paths_portabilized": false
+    "published_sha256": "3132b16d71e987e16e1a75b8a9cfd782c031b73f147800fea3d8d7afe451d740",
+    "paths_portabilized": false,
+    "working_copy_sha256": "899b9087c7715cf8f4ecb13ea9a0980839d72ed8baf55e1b48516ab081fecc26"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_familymatch_24e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_familymatch_24e.yml",
     "source_sha256": "3e8cdce4c977532fad8c91ab03708e4248812f0093c4209d442a54a3d426bf7a",
-    "published_sha256": "4c7ca78ca9dab819d44dae626a96f3f876b9d7468d683fd9c1bad7a5e6e7649a",
-    "paths_portabilized": false
+    "published_sha256": "3e8cdce4c977532fad8c91ab03708e4248812f0093c4209d442a54a3d426bf7a",
+    "paths_portabilized": false,
+    "working_copy_sha256": "4c7ca78ca9dab819d44dae626a96f3f876b9d7468d683fd9c1bad7a5e6e7649a"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_familymatch_48e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_familymatch_48e.yml",
     "source_sha256": "1058dbdc513529ce128d0c7be577155d32670a8e9cb33d6f7657f7c886e77ba7",
-    "published_sha256": "bcc8e7242cfdba4513ae6cb97ebf531cae4e53d8996f78818df1600e5a40b895",
-    "paths_portabilized": false
+    "published_sha256": "1058dbdc513529ce128d0c7be577155d32670a8e9cb33d6f7657f7c886e77ba7",
+    "paths_portabilized": false,
+    "working_copy_sha256": "bcc8e7242cfdba4513ae6cb97ebf531cae4e53d8996f78818df1600e5a40b895"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_familymatch_72e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_familymatch_72e.yml",
     "source_sha256": "a46af69da90a4859e5e31dc15ef7ffb678dabfb9071a66657e187bbefaeda764",
-    "published_sha256": "013340bf94897927acc4efc5bcac0e3b7c0fde402b6005780b8c0de572dc3aad",
-    "paths_portabilized": false
+    "published_sha256": "a46af69da90a4859e5e31dc15ef7ffb678dabfb9071a66657e187bbefaeda764",
+    "paths_portabilized": false,
+    "working_copy_sha256": "013340bf94897927acc4efc5bcac0e3b7c0fde402b6005780b8c0de572dc3aad"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_familymatch_96e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_familymatch_96e.yml",
     "source_sha256": "25bac2301d7191cbd85ff50d50c6b0ff4e5a2bf4c981b46d2f9c2d622956e4bc",
-    "published_sha256": "3046abb382d25d13fdcce039cabacadc1839205a377aa23fc9a3780823e05166",
-    "paths_portabilized": false
+    "published_sha256": "25bac2301d7191cbd85ff50d50c6b0ff4e5a2bf4c981b46d2f9c2d622956e4bc",
+    "paths_portabilized": false,
+    "working_copy_sha256": "3046abb382d25d13fdcce039cabacadc1839205a377aa23fc9a3780823e05166"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_familymatch_rect736_8e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_familymatch_rect736_8e.yml",
     "source_sha256": "cdf975264ce3a71ffc8241a7a4fdfd7bb82732a9e1d8c3e71e6d8a79c8f7c38e",
-    "published_sha256": "4b5520889c58d5d090e20a049d112ba2cd598f2d93e00d2ad3b89bf6d458b4df",
-    "paths_portabilized": false
+    "published_sha256": "cdf975264ce3a71ffc8241a7a4fdfd7bb82732a9e1d8c3e71e6d8a79c8f7c38e",
+    "paths_portabilized": false,
+    "working_copy_sha256": "4b5520889c58d5d090e20a049d112ba2cd598f2d93e00d2ad3b89bf6d458b4df"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_familymatch_weak3510_4e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_familymatch_weak3510_4e.yml",
     "source_sha256": "1d8c238178ab3137f203958ed00674674bbf46c07edeff869304fd21341a468b",
-    "published_sha256": "4761abbd6a1735d5b96d7e2280623ff590797eab37b01a1597c5b5921214d92b",
-    "paths_portabilized": false
+    "published_sha256": "1d8c238178ab3137f203958ed00674674bbf46c07edeff869304fd21341a468b",
+    "paths_portabilized": false,
+    "working_copy_sha256": "4761abbd6a1735d5b96d7e2280623ff590797eab37b01a1597c5b5921214d92b"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_k10.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_k10.yml",
     "source_sha256": "a3536c95590e8cd17a759a6421d386db3a7dc5aecc8fc10129632351bd91ff0b",
-    "published_sha256": "2cb286a6d85fb76eb2b2d0b7c9a76a21ca297b84616d206a41ec1578480a9eed",
-    "paths_portabilized": false
+    "published_sha256": "a3536c95590e8cd17a759a6421d386db3a7dc5aecc8fc10129632351bd91ff0b",
+    "paths_portabilized": false,
+    "working_copy_sha256": "2cb286a6d85fb76eb2b2d0b7c9a76a21ca297b84616d206a41ec1578480a9eed"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_k10_1280_32e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_k10_1280_32e.yml",
     "source_sha256": "94194051ee51462210af12481ce88a7c9b753d66ebd1f1afae3798330731e51a",
-    "published_sha256": "3c005b031fc843ae3b0edcccc6412220e94429822a8af01f4b84c1bd4f0ecdd8",
-    "paths_portabilized": false
+    "published_sha256": "94194051ee51462210af12481ce88a7c9b753d66ebd1f1afae3798330731e51a",
+    "paths_portabilized": false,
+    "working_copy_sha256": "3c005b031fc843ae3b0edcccc6412220e94429822a8af01f4b84c1bd4f0ecdd8"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_k10_1280_48e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_k10_1280_48e.yml",
     "source_sha256": "45ab36f3bb71c63870bd81af263698f4a530d4a3ca2b819df4f9ee84da292a5d",
-    "published_sha256": "f6d0841d68e23f8a3dfb24120d91f5ff5a0f912c17803ef7657a5eb728dfa99a",
-    "paths_portabilized": false
+    "published_sha256": "45ab36f3bb71c63870bd81af263698f4a530d4a3ca2b819df4f9ee84da292a5d",
+    "paths_portabilized": false,
+    "working_copy_sha256": "f6d0841d68e23f8a3dfb24120d91f5ff5a0f912c17803ef7657a5eb728dfa99a"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_k10_1536.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_k10_1536.yml",
     "source_sha256": "7de4585dc2d80d0ae8b4820593654ac3c55a26c40ca3e2be44da971af68cbaa3",
-    "published_sha256": "7fa871887d86247b98698fa8bf0a229f33b26bfff5c3869efab25a1de4b6355c",
-    "paths_portabilized": false
+    "published_sha256": "7de4585dc2d80d0ae8b4820593654ac3c55a26c40ca3e2be44da971af68cbaa3",
+    "paths_portabilized": false,
+    "working_copy_sha256": "7fa871887d86247b98698fa8bf0a229f33b26bfff5c3869efab25a1de4b6355c"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_k10_1536_24e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_k10_1536_24e.yml",
     "source_sha256": "f35c3b45522a49030d444d32769538e9acc8ad4081f049827534ca453f2fc768",
-    "published_sha256": "92c497193bff5743d3526f1dc0048c8d9b2fe02da67c795953c575c4adbfe6ed",
-    "paths_portabilized": false
+    "published_sha256": "f35c3b45522a49030d444d32769538e9acc8ad4081f049827534ca453f2fc768",
+    "paths_portabilized": false,
+    "working_copy_sha256": "92c497193bff5743d3526f1dc0048c8d9b2fe02da67c795953c575c4adbfe6ed"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_k10_1536_32e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_k10_1536_32e.yml",
     "source_sha256": "60a9f2e2bc41f8c4ca1daa859d5434e4fe103ec2a4b6dcc5c98f80a65c8ca9b0",
-    "published_sha256": "040586c657aba0502f567e40794c5259c2d24bee1539569b0cec04479fd61e62",
-    "paths_portabilized": false
+    "published_sha256": "60a9f2e2bc41f8c4ca1daa859d5434e4fe103ec2a4b6dcc5c98f80a65c8ca9b0",
+    "paths_portabilized": false,
+    "working_copy_sha256": "040586c657aba0502f567e40794c5259c2d24bee1539569b0cec04479fd61e62"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_aic_k10_24e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_aic_k10_24e.yml",
     "source_sha256": "a0a7178650e1b112b53767ddca9dfbee12251c07c66f49bdd3b03df0cf31505d",
-    "published_sha256": "826b5acb0444e9ced3b3a7da6b74805144fb583f87c50de9d29205ab85509bbc",
-    "paths_portabilized": false
+    "published_sha256": "a0a7178650e1b112b53767ddca9dfbee12251c07c66f49bdd3b03df0cf31505d",
+    "paths_portabilized": false,
+    "working_copy_sha256": "826b5acb0444e9ced3b3a7da6b74805144fb583f87c50de9d29205ab85509bbc"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_l_custom.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_l_custom.yml",
     "source_sha256": "642d53104a97f8bcee6c08503643ceb5dc041e9ae4e57ba834395ca44e9c8452",
-    "published_sha256": "642d53104a97f8bcee6c08503643ceb5dc041e9ae4e57ba834395ca44e9c8452",
-    "paths_portabilized": false
+    "published_sha256": "e567c56af5605afb56ad84a872aac39b8262a7a3fdd6a478c3bccaa6a2bc9254",
+    "paths_portabilized": false,
+    "working_copy_sha256": "642d53104a97f8bcee6c08503643ceb5dc041e9ae4e57ba834395ca44e9c8452"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_m_aic.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_m_aic.yml",
     "source_sha256": "f53332dba2881feea71a682f58348f88e8994bb63b230ed6bb85be2c185cdd43",
-    "published_sha256": "3ca60668c330731139e7f0465a2c91bc4d8a31a6f01975418c1f4a03e86f87a8",
-    "paths_portabilized": false
+    "published_sha256": "f53332dba2881feea71a682f58348f88e8994bb63b230ed6bb85be2c185cdd43",
+    "paths_portabilized": false,
+    "working_copy_sha256": "3ca60668c330731139e7f0465a2c91bc4d8a31a6f01975418c1f4a03e86f87a8"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_m_aic_k10.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_m_aic_k10.yml",
     "source_sha256": "0418132ea0184b20cab6a0cca98930007df00b54f8ef0a3dc5e60dccc830f270",
-    "published_sha256": "3e9d76dbeadb87c7e8b56d85677696372979d881fb0147c191ddc0e6f0fbe009",
-    "paths_portabilized": false
+    "published_sha256": "0418132ea0184b20cab6a0cca98930007df00b54f8ef0a3dc5e60dccc830f270",
+    "paths_portabilized": false,
+    "working_copy_sha256": "3e9d76dbeadb87c7e8b56d85677696372979d881fb0147c191ddc0e6f0fbe009"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_m_aic_k10b.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_m_aic_k10b.yml",
     "source_sha256": "bf8b30a8ba52a6da06666b968c848f9e5bec61d63e6b4bff6f4f2f9537f58619",
-    "published_sha256": "d87cc1c7db8ffbbd39721610077c039f266b301a199a1671402878353aef6b9e",
-    "paths_portabilized": false
+    "published_sha256": "bf8b30a8ba52a6da06666b968c848f9e5bec61d63e6b4bff6f4f2f9537f58619",
+    "paths_portabilized": false,
+    "working_copy_sha256": "d87cc1c7db8ffbbd39721610077c039f266b301a199a1671402878353aef6b9e"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_m_aic_mm.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_m_aic_mm.yml",
     "source_sha256": "f89e2d61454f8d5f5f9677a1ea15a53d60e718842bcb2e1a00a88f862472a88e",
-    "published_sha256": "550e7a6aec9c711e39710b7b969238074cc01d5eac7fe8805feb78cefacd3430",
-    "paths_portabilized": false
+    "published_sha256": "f89e2d61454f8d5f5f9677a1ea15a53d60e718842bcb2e1a00a88f862472a88e",
+    "paths_portabilized": false,
+    "working_copy_sha256": "550e7a6aec9c711e39710b7b969238074cc01d5eac7fe8805feb78cefacd3430"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_m_aic_rare5_5090.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_m_aic_rare5_5090.yml",
     "source_sha256": "365b6d059f698c63c7618ff267970477a6d3145eb3f463c624d74b0760b152ee",
-    "published_sha256": "09957b9d52e4e6a389d981e639a7cd21051687a90a0e5c43b06ee526564c12ea",
-    "paths_portabilized": false
+    "published_sha256": "365b6d059f698c63c7618ff267970477a6d3145eb3f463c624d74b0760b152ee",
+    "paths_portabilized": false,
+    "working_copy_sha256": "09957b9d52e4e6a389d981e639a7cd21051687a90a0e5c43b06ee526564c12ea"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_m_aic_rare5_5090_b8.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_m_aic_rare5_5090_b8.yml",
     "source_sha256": "eb11a312e77cd89a6c516300aae7daa40fe1ea6fc05e1912a06bd16f4d754929",
-    "published_sha256": "cfd488646639c659c44d5321907a39a6722ad330e45be6eeae0fc946b639f519",
-    "paths_portabilized": false
+    "published_sha256": "eb11a312e77cd89a6c516300aae7daa40fe1ea6fc05e1912a06bd16f4d754929",
+    "paths_portabilized": false,
+    "working_copy_sha256": "cfd488646639c659c44d5321907a39a6722ad330e45be6eeae0fc946b639f519"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_m_aic_rare5_5090_b8_cache.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_m_aic_rare5_5090_b8_cache.yml",
     "source_sha256": "866e4be6ea7d6a158b75f4e58e478f4f477503d70d8003f4cc0345a2ee636b30",
-    "published_sha256": "8381cd41916f6ab3cc43c4f504872ad118fe3a5a50ca26c0f332bc95b1c43560",
-    "paths_portabilized": false
+    "published_sha256": "866e4be6ea7d6a158b75f4e58e478f4f477503d70d8003f4cc0345a2ee636b30",
+    "paths_portabilized": false,
+    "working_copy_sha256": "8381cd41916f6ab3cc43c4f504872ad118fe3a5a50ca26c0f332bc95b1c43560"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_m_custom.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_m_custom.yml",
     "source_sha256": "14247e0f3c3f753ccd869f08f47c3633e861ae0c9a4d1e86c053e7b9952f4bb5",
-    "published_sha256": "14247e0f3c3f753ccd869f08f47c3633e861ae0c9a4d1e86c053e7b9952f4bb5",
-    "paths_portabilized": false
+    "published_sha256": "f19e0ebc3c82ae2b2139b51e50e3f3724832b704b3512873bfd8f147708a42ad",
+    "paths_portabilized": false,
+    "working_copy_sha256": "14247e0f3c3f753ccd869f08f47c3633e861ae0c9a4d1e86c053e7b9952f4bb5"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_n_custom.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_n_custom.yml",
     "source_sha256": "605bc4fb482e2432d7229375ba2f958032cbe7a28d755add254447d0fb525f06",
-    "published_sha256": "605bc4fb482e2432d7229375ba2f958032cbe7a28d755add254447d0fb525f06",
-    "paths_portabilized": false
+    "published_sha256": "1fdc3ff9b45cf69c8b130a3f53bddf809b19a08d8e6e4db2b4b1afb530ae75ce",
+    "paths_portabilized": false,
+    "working_copy_sha256": "605bc4fb482e2432d7229375ba2f958032cbe7a28d755add254447d0fb525f06"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic.yml",
     "source_sha256": "f2632a61e6e1b0afe8b3a16c61ffd80128afa4ca0a4d0fad0454e3aa8ed62c8a",
-    "published_sha256": "a40a2af697508f81319808dce754a63b1b7f6af1ae06b8272cbb12161031d3b2",
-    "paths_portabilized": false
+    "published_sha256": "f2632a61e6e1b0afe8b3a16c61ffd80128afa4ca0a4d0fad0454e3aa8ed62c8a",
+    "paths_portabilized": false,
+    "working_copy_sha256": "a40a2af697508f81319808dce754a63b1b7f6af1ae06b8272cbb12161031d3b2"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_1408.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_1408.yml",
     "source_sha256": "c5f3263060403801490b4df7d8fb0da33845ba1701da00715532f5635a15c8b5",
-    "published_sha256": "d997beb43dbf170ea06dc3eb42ecd2113f17fbd2f08517792d684d730d667241",
-    "paths_portabilized": false
+    "published_sha256": "c5f3263060403801490b4df7d8fb0da33845ba1701da00715532f5635a15c8b5",
+    "paths_portabilized": false,
+    "working_copy_sha256": "d997beb43dbf170ea06dc3eb42ecd2113f17fbd2f08517792d684d730d667241"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_150e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_150e.yml",
     "source_sha256": "121d34b1d711942f88471716d0a644e939f04bfdaad9be25cc9c469965ebdbbb",
-    "published_sha256": "754ba26ed9a2a33cf685298e481e18778d76f0b17a55e5bccf47d6dc17c3370a",
-    "paths_portabilized": false
+    "published_sha256": "121d34b1d711942f88471716d0a644e939f04bfdaad9be25cc9c469965ebdbbb",
+    "paths_portabilized": false,
+    "working_copy_sha256": "754ba26ed9a2a33cf685298e481e18778d76f0b17a55e5bccf47d6dc17c3370a"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_1536.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_1536.yml",
     "source_sha256": "0163f67fbdcf73b65ee31221424b8e7d2c2427d2dbac9b6a563109e09c3c0888",
-    "published_sha256": "25548d4f4644334f7530d2c53520e4282df7ea3f28e338b36b307fea658baf24",
-    "paths_portabilized": false
+    "published_sha256": "0163f67fbdcf73b65ee31221424b8e7d2c2427d2dbac9b6a563109e09c3c0888",
+    "paths_portabilized": false,
+    "working_copy_sha256": "25548d4f4644334f7530d2c53520e4282df7ea3f28e338b36b307fea658baf24"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_all2000_k10.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_all2000_k10.yml",
     "source_sha256": "db724a3a9e5929d3521234c0797c49f05f6ade1751c89d27824e9f2e76f87479",
-    "published_sha256": "7fa11e6789000b5141b65fce03c5615e61d58c85e06791ef2d884e792c954b27",
-    "paths_portabilized": false
+    "published_sha256": "db724a3a9e5929d3521234c0797c49f05f6ade1751c89d27824e9f2e76f87479",
+    "paths_portabilized": false,
+    "working_copy_sha256": "7fa11e6789000b5141b65fce03c5615e61d58c85e06791ef2d884e792c954b27"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_k10_p2.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_k10_p2.yml",
     "source_sha256": "ffdb948018f1ba4b042b94277b594cf24e0d6d94d19e92beca28ceeff9f0fb6a",
-    "published_sha256": "60777d01f8cc36c823c8b4e5c65928169c4b4583376831ef5db6545166ee2cdb",
-    "paths_portabilized": false
+    "published_sha256": "ffdb948018f1ba4b042b94277b594cf24e0d6d94d19e92beca28ceeff9f0fb6a",
+    "paths_portabilized": false,
+    "working_copy_sha256": "60777d01f8cc36c823c8b4e5c65928169c4b4583376831ef5db6545166ee2cdb"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_k10_saug.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_k10_saug.yml",
     "source_sha256": "d15fbd11df089d529def1e3b26dad2aaaa33c4520685abd81f609e05920e90c2",
-    "published_sha256": "bbaa717eed6d540d0e2e40aeabe55f1582514fec0c29a5fcc57909259cbbee18",
-    "paths_portabilized": false
+    "published_sha256": "d15fbd11df089d529def1e3b26dad2aaaa33c4520685abd81f609e05920e90c2",
+    "paths_portabilized": false,
+    "working_copy_sha256": "bbaa717eed6d540d0e2e40aeabe55f1582514fec0c29a5fcc57909259cbbee18"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_k10_saug48.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_k10_saug48.yml",
     "source_sha256": "cc88c7d7d3a58513743b5abe0cc5e2a23492f3faa100ba947b62705c7075beb3",
-    "published_sha256": "299995dd1b5133731372d64089068b8da9c135caba5f38f7fba81f5363d6ecff",
-    "paths_portabilized": false
+    "published_sha256": "cc88c7d7d3a58513743b5abe0cc5e2a23492f3faa100ba947b62705c7075beb3",
+    "paths_portabilized": false,
+    "working_copy_sha256": "299995dd1b5133731372d64089068b8da9c135caba5f38f7fba81f5363d6ecff"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_k10_warm.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_k10_warm.yml",
     "source_sha256": "0aaa82fd1966f41186cbdcf139cae3117e470f9458db154f4cceb7f974d89be6",
-    "published_sha256": "9d1cb0cf01af2f41e52c5850cb2b76c8e40663209d0ee4f1dad3f07f7e783e5c",
-    "paths_portabilized": false
+    "published_sha256": "0aaa82fd1966f41186cbdcf139cae3117e470f9458db154f4cceb7f974d89be6",
+    "paths_portabilized": false,
+    "working_copy_sha256": "9d1cb0cf01af2f41e52c5850cb2b76c8e40663209d0ee4f1dad3f07f7e783e5c"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_mm.bak.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_mm.bak.yml",
     "source_sha256": "a449f828cfb0225639477e599c3bdc06dccf2af469ac6fe0e8535b01f1124fad",
-    "published_sha256": "d02d692df4ed1b21ac932f87fc6f4f79fe560d1a0b6799ed9a8372161206f24a",
-    "paths_portabilized": false
+    "published_sha256": "a449f828cfb0225639477e599c3bdc06dccf2af469ac6fe0e8535b01f1124fad",
+    "paths_portabilized": false,
+    "working_copy_sha256": "d02d692df4ed1b21ac932f87fc6f4f79fe560d1a0b6799ed9a8372161206f24a"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_mm.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_mm.yml",
     "source_sha256": "b070eb057493455577da20f39f2f60ae2f0dddee0be3330d2bd611786cca86c1",
-    "published_sha256": "7359368de7d0ead94be013267279009fb7d204a3cdd636c05b7dc1133e1d08e9",
-    "paths_portabilized": false
+    "published_sha256": "b070eb057493455577da20f39f2f60ae2f0dddee0be3330d2bd611786cca86c1",
+    "paths_portabilized": false,
+    "working_copy_sha256": "7359368de7d0ead94be013267279009fb7d204a3cdd636c05b7dc1133e1d08e9"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_mm72.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_mm72.yml",
     "source_sha256": "d4434f9552e25c04d98d3bed63258b294940b08835b8928fff6a35f98e83f6ec",
-    "published_sha256": "d1f38c0db7babb1647b670273402e2c2af14f011938051bd49432c0658b6803a",
-    "paths_portabilized": false
+    "published_sha256": "d4434f9552e25c04d98d3bed63258b294940b08835b8928fff6a35f98e83f6ec",
+    "paths_portabilized": false,
+    "working_copy_sha256": "d1f38c0db7babb1647b670273402e2c2af14f011938051bd49432c0658b6803a"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_mm_all2000.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_mm_all2000.yml",
     "source_sha256": "6f83eaba75667cca8d436d545d80bd9ab24036311771a7cc77df460f91d340a4",
-    "published_sha256": "60d7cd7f1099da81a2de8ab17c82b5e5d2a6f0ecdfb742dad6cd1f9d8c470d19",
-    "paths_portabilized": false
+    "published_sha256": "6f83eaba75667cca8d436d545d80bd9ab24036311771a7cc77df460f91d340a4",
+    "paths_portabilized": false,
+    "working_copy_sha256": "60d7cd7f1099da81a2de8ab17c82b5e5d2a6f0ecdfb742dad6cd1f9d8c470d19"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_rare.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_rare.yml",
     "source_sha256": "6d28d0a2e4ae9bf82e2f09fd8c3ef1a042a7b29a46980099839606d9257d7414",
-    "published_sha256": "789a6da7ba0b33621050e488d46329c0303aba6739d9db1dfc73ace930fbfe28",
-    "paths_portabilized": false
+    "published_sha256": "6d28d0a2e4ae9bf82e2f09fd8c3ef1a042a7b29a46980099839606d9257d7414",
+    "paths_portabilized": false,
+    "working_copy_sha256": "789a6da7ba0b33621050e488d46329c0303aba6739d9db1dfc73ace930fbfe28"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_rare5_150e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_rare5_150e.yml",
     "source_sha256": "2362d1cb09648101bbe94e588ce645ed11a78e0bf69349159552bc314a808b08",
-    "published_sha256": "e40f04632070859b3180e3a773a73d03e4b3b9732f9b033762c7e165c93a8ee6",
-    "paths_portabilized": false
+    "published_sha256": "2362d1cb09648101bbe94e588ce645ed11a78e0bf69349159552bc314a808b08",
+    "paths_portabilized": false,
+    "working_copy_sha256": "e40f04632070859b3180e3a773a73d03e4b3b9732f9b033762c7e165c93a8ee6"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_rare5_72e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_rare5_72e.yml",
     "source_sha256": "a35839f367c23fb5e00126f84419722f22078f4c72664f007efbeef8fe9e534b",
-    "published_sha256": "808a8a1e8ec17ad86a350edd6cc14a3900e9f6b90dd958e36c597642f46639e3",
-    "paths_portabilized": false
+    "published_sha256": "a35839f367c23fb5e00126f84419722f22078f4c72664f007efbeef8fe9e534b",
+    "paths_portabilized": false,
+    "working_copy_sha256": "808a8a1e8ec17ad86a350edd6cc14a3900e9f6b90dd958e36c597642f46639e3"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_rare_150e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_rare_150e.yml",
     "source_sha256": "43b67f390d895ed1db020ba6f877c19dec7f47aa753b024900c77f6174d5192c",
-    "published_sha256": "e852534d60dbf15ccc4215f503fc10d87787211827df6375830c8bf457ddab5f",
-    "paths_portabilized": false
+    "published_sha256": "43b67f390d895ed1db020ba6f877c19dec7f47aa753b024900c77f6174d5192c",
+    "paths_portabilized": false,
+    "working_copy_sha256": "e852534d60dbf15ccc4215f503fc10d87787211827df6375830c8bf457ddab5f"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_rare_k10_cache.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_rare_k10_cache.yml",
     "source_sha256": "ac412b6f102b28aa076ba72d93b8c93f07b2c9c810f81402996073e9f918b67b",
-    "published_sha256": "27c15a99935f97df7fd57452330a7904e8ecb08f303eea55875909c64ef13730",
-    "paths_portabilized": false
+    "published_sha256": "ac412b6f102b28aa076ba72d93b8c93f07b2c9c810f81402996073e9f918b67b",
+    "paths_portabilized": false,
+    "working_copy_sha256": "27c15a99935f97df7fd57452330a7904e8ecb08f303eea55875909c64ef13730"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_aic_rare_k5_cache.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_aic_rare_k5_cache.yml",
     "source_sha256": "57ec1591b54d0bfc556f17b2c6cf6ffb1fd462ef85725c216dc123dd94725f3f",
-    "published_sha256": "96e7a0d1d668f4e9ccc3f4139c634bd862076a4ac900cbfefd16763d9867508e",
-    "paths_portabilized": false
+    "published_sha256": "57ec1591b54d0bfc556f17b2c6cf6ffb1fd462ef85725c216dc123dd94725f3f",
+    "paths_portabilized": false,
+    "working_copy_sha256": "96e7a0d1d668f4e9ccc3f4139c634bd862076a4ac900cbfefd16763d9867508e"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_s_custom.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_s_custom.yml",
     "source_sha256": "cd07139bd49e61a25b53f85e6d44e8737601848def05443692ad9c3be3df6dc7",
-    "published_sha256": "cd07139bd49e61a25b53f85e6d44e8737601848def05443692ad9c3be3df6dc7",
-    "paths_portabilized": false
+    "published_sha256": "320855741111f0add811a424bdbd2306e6a3885331b9a0eea912d5e565fa2635",
+    "paths_portabilized": false,
+    "working_copy_sha256": "cd07139bd49e61a25b53f85e6d44e8737601848def05443692ad9c3be3df6dc7"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_aic_all2000_24e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_aic_all2000_24e.yml",
     "source_sha256": "23fd7d2801c5e73ad2e560f0d9cdb83352f33e4d68a776b6583d7d8f18f0fa9b",
-    "published_sha256": "888069c0c109acefea78c4a3cf87608b759a7a934b629e4f766489c86d92d854",
-    "paths_portabilized": false
+    "published_sha256": "23fd7d2801c5e73ad2e560f0d9cdb83352f33e4d68a776b6583d7d8f18f0fa9b",
+    "paths_portabilized": false,
+    "working_copy_sha256": "888069c0c109acefea78c4a3cf87608b759a7a934b629e4f766489c86d92d854"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_aic_familymatch_32e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_aic_familymatch_32e.yml",
     "source_sha256": "897797032a2892ed438fe9a80a037eab6bbb003c190e77d607015a2ffda5b853",
-    "published_sha256": "59f33678405b7cc31fd0a31dbf4b084a069a411ee2f9685b0b84f701067673f8",
-    "paths_portabilized": false
+    "published_sha256": "897797032a2892ed438fe9a80a037eab6bbb003c190e77d607015a2ffda5b853",
+    "paths_portabilized": false,
+    "working_copy_sha256": "59f33678405b7cc31fd0a31dbf4b084a069a411ee2f9685b0b84f701067673f8"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_aic_familymatch_48e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_aic_familymatch_48e.yml",
     "source_sha256": "ad63fee9dceb7da3ecf41d706c90bb6593ace7b602c6b9ff6cb5f5b9c2fdac8f",
-    "published_sha256": "4fdf66736177ac6c9763d4ceb3dc47afef523499d5d93e80303962700f9e4446",
-    "paths_portabilized": false
+    "published_sha256": "ad63fee9dceb7da3ecf41d706c90bb6593ace7b602c6b9ff6cb5f5b9c2fdac8f",
+    "paths_portabilized": false,
+    "working_copy_sha256": "4fdf66736177ac6c9763d4ceb3dc47afef523499d5d93e80303962700f9e4446"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_aic_familymatch_72e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_aic_familymatch_72e.yml",
     "source_sha256": "1c312ddad678bde836e8a6a5af8369af8f71ac31f3bbf846211fbd68560bccd6",
-    "published_sha256": "e27f2f0e7ba7f374600ef8d57738069467327d86c54a7572384d5ebf5fac2b17",
-    "paths_portabilized": false
+    "published_sha256": "1c312ddad678bde836e8a6a5af8369af8f71ac31f3bbf846211fbd68560bccd6",
+    "paths_portabilized": false,
+    "working_copy_sha256": "e27f2f0e7ba7f374600ef8d57738069467327d86c54a7572384d5ebf5fac2b17"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_aic_familymatch_rect736_4e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_aic_familymatch_rect736_4e.yml",
     "source_sha256": "210ea6d95cf92739bda29d67fe16a9ec3f265fb7ac2a290b023b8a028bb7658a",
-    "published_sha256": "f30ab31167a02a37ecec02f4fedc51c83083a85a3d325acd5b6702f41ff1dcb9",
-    "paths_portabilized": false
+    "published_sha256": "210ea6d95cf92739bda29d67fe16a9ec3f265fb7ac2a290b023b8a028bb7658a",
+    "paths_portabilized": false,
+    "working_copy_sha256": "f30ab31167a02a37ecec02f4fedc51c83083a85a3d325acd5b6702f41ff1dcb9"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_aic_familymatch_weak3510_4e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_aic_familymatch_weak3510_4e.yml",
     "source_sha256": "4a37a654c8783a264a119086a615b5105fab6f500e38e55f88fec508de9cdaea",
-    "published_sha256": "2f0a5d1e4eea8cb116df4ce05b1d314ee207287066a93ad72f88a3dfd1bb191a",
-    "paths_portabilized": false
+    "published_sha256": "4a37a654c8783a264a119086a615b5105fab6f500e38e55f88fec508de9cdaea",
+    "paths_portabilized": false,
+    "working_copy_sha256": "2f0a5d1e4eea8cb116df4ce05b1d314ee207287066a93ad72f88a3dfd1bb191a"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_aic_k10.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_aic_k10.yml",
     "source_sha256": "795b23b4cc2bd1e76ab8ae1f815a9ebf3359e6f913d90b667c2d831f2a97130e",
-    "published_sha256": "b1f10e3756756d668c525d6d072d0e18144958a958a1d45684d0dd9ddf1fe071",
-    "paths_portabilized": false
+    "published_sha256": "795b23b4cc2bd1e76ab8ae1f815a9ebf3359e6f913d90b667c2d831f2a97130e",
+    "paths_portabilized": false,
+    "working_copy_sha256": "b1f10e3756756d668c525d6d072d0e18144958a958a1d45684d0dd9ddf1fe071"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_aic_k10_1280_24e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_aic_k10_1280_24e.yml",
     "source_sha256": "a0152ba9d1ba4030798eb8fca5ddbc0a1200e32f5925e6e2c5ce337e9428800d",
-    "published_sha256": "81e7d80b1f104fa7bf362e3cb8dafc6f6a27aba1a027f79a74c1e8c478962461",
-    "paths_portabilized": false
+    "published_sha256": "a0152ba9d1ba4030798eb8fca5ddbc0a1200e32f5925e6e2c5ce337e9428800d",
+    "paths_portabilized": false,
+    "working_copy_sha256": "81e7d80b1f104fa7bf362e3cb8dafc6f6a27aba1a027f79a74c1e8c478962461"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_aic_k10_1536.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_aic_k10_1536.yml",
     "source_sha256": "419c0f6fe562020c88aeb320fcabe66821f7b94ad6066fc567e18f990ac85f23",
-    "published_sha256": "5ea0bab5ff9dc8b98a62100670845af8d3e25c4201ed7d0a8b09e0e35b644ecd",
-    "paths_portabilized": false
+    "published_sha256": "419c0f6fe562020c88aeb320fcabe66821f7b94ad6066fc567e18f990ac85f23",
+    "paths_portabilized": false,
+    "working_copy_sha256": "5ea0bab5ff9dc8b98a62100670845af8d3e25c4201ed7d0a8b09e0e35b644ecd"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_aic_mm_familymatch_4e.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_aic_mm_familymatch_4e.yml",
     "source_sha256": "3b5af11950fda9b34500ff5810d628be60f462bd03ff685dd9fe121e4d98caaf",
-    "published_sha256": "11362173dbfd76652a27e18085fcd8979f0c258cc33cb3ab3c40193f1e0f7455",
-    "paths_portabilized": false
+    "published_sha256": "3b5af11950fda9b34500ff5810d628be60f462bd03ff685dd9fe121e4d98caaf",
+    "paths_portabilized": false,
+    "working_copy_sha256": "11362173dbfd76652a27e18085fcd8979f0c258cc33cb3ab3c40193f1e0f7455"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/dfine_hgnetv2_x_custom.yml",
     "published": "configs/archive/dfine_custom/dfine_hgnetv2_x_custom.yml",
     "source_sha256": "79b74821f9d67e5a724c7ea0d7d8f30e7ead8c3043ca76895965a2330de426b6",
-    "published_sha256": "79b74821f9d67e5a724c7ea0d7d8f30e7ead8c3043ca76895965a2330de426b6",
-    "paths_portabilized": false
+    "published_sha256": "8fd0b8bb780233342b012fca86a85cacd53b7a4812b89e8b91726afa34b489c4",
+    "paths_portabilized": false,
+    "working_copy_sha256": "79b74821f9d67e5a724c7ea0d7d8f30e7ead8c3043ca76895965a2330de426b6"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/m_b8_infer_eval1280.yml",
     "published": "configs/archive/dfine_custom/m_b8_infer_eval1280.yml",
     "source_sha256": "29d4449706e9983fca19c786cecb536951b522ba4c7ec277ba06fefebbd0fbbd",
-    "published_sha256": "1b91e8dcd3f0e0f14559ba8e4c60b56824c188c9727451d0698d899148826e4c",
-    "paths_portabilized": false
+    "published_sha256": "29d4449706e9983fca19c786cecb536951b522ba4c7ec277ba06fefebbd0fbbd",
+    "paths_portabilized": false,
+    "working_copy_sha256": "1b91e8dcd3f0e0f14559ba8e4c60b56824c188c9727451d0698d899148826e4c"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection.yml",
     "published": "configs/archive/dfine_dataset/aic_detection.yml",
     "source_sha256": "0fbe049ee57210679ff90c5e035f1e0b574ec8cdd56c8cd222731fa76d27d7d0",
-    "published_sha256": "a6b94c6a0d8a98e5008e2e368d215914cb5e5370d162c1ca9513469cf4c3aabe",
-    "paths_portabilized": true
+    "published_sha256": "cfbba81f3182830f97db5a337825400f65d709b2b4eefd5ee874da9db1e02749",
+    "paths_portabilized": true,
+    "working_copy_sha256": "a6b94c6a0d8a98e5008e2e368d215914cb5e5370d162c1ca9513469cf4c3aabe"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_1408.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_1408.yml",
     "source_sha256": "8e2416c606f5dc952d2276bc437898fbf34a48994cff7dbc67afb0ce85b1c927",
-    "published_sha256": "366bb7886d0179a0ed354e68b60de366987a03c7f2e8c079a867103d17d6a1be",
-    "paths_portabilized": true
+    "published_sha256": "a8e12bcf557e131f7d9ba90103581b9e6e46d236e2ae00f78460468b5cd14b4b",
+    "paths_portabilized": true,
+    "working_copy_sha256": "366bb7886d0179a0ed354e68b60de366987a03c7f2e8c079a867103d17d6a1be"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_1536.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_1536.yml",
     "source_sha256": "1996e1d6dd89a0eee0098c3bceec3205c4215b7e337a43e5ca7dd778f882af72",
-    "published_sha256": "ea1cd89007fbb449ed5f5483484caadd362d86c49f06fc6b5ca9d388d8279ced",
-    "paths_portabilized": true
+    "published_sha256": "0f72441a5ad767ee6bbf2a8f7bb1298807c3bb2f6f18d9c2b444fbd7416eb518",
+    "paths_portabilized": true,
+    "working_copy_sha256": "ea1cd89007fbb449ed5f5483484caadd362d86c49f06fc6b5ca9d388d8279ced"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_all2000_k10_cache_b2.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_all2000_k10_cache_b2.yml",
     "source_sha256": "2b44ab7e4a23f9ec7d8bde4f1ea49fd9ed27bba16064ccdff23bc95a9d83a654",
-    "published_sha256": "e8fcee253308effc8ef08fb135c34ad04d9d2ddeaa84f0341f78d3a3baed700d",
-    "paths_portabilized": true
+    "published_sha256": "9ec4429ed7f01028673306242316204c01ab915fd8a55b035538fd3038ea2406",
+    "paths_portabilized": true,
+    "working_copy_sha256": "e8fcee253308effc8ef08fb135c34ad04d9d2ddeaa84f0341f78d3a3baed700d"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_all2000_k10_cache_b2_1536.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_all2000_k10_cache_b2_1536.yml",
     "source_sha256": "3b055eebe70be21681b2845131626e90eace748a08a4d14f301d50d98defa3e5",
-    "published_sha256": "47e3f79dcb66ca5572b2337ffe1d9755a5c3850249e772ebcd7c8c7a354a1572",
-    "paths_portabilized": true
+    "published_sha256": "8ef258636a9f7babc8905c837250e852033c25b030235d3b007e4ca82e6a1eff",
+    "paths_portabilized": true,
+    "working_copy_sha256": "47e3f79dcb66ca5572b2337ffe1d9755a5c3850249e772ebcd7c8c7a354a1572"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_all2000_k10_cache_b8.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_all2000_k10_cache_b8.yml",
     "source_sha256": "f50b771df5e2c08a7b3dc8710d470c8cf75d09589f66c821062f7c3d64b8423c",
-    "published_sha256": "979e1ced3305d8cea88c3a8b3448f7ee112ac5d0fe1305e23c1440732ae984bc",
-    "paths_portabilized": true
+    "published_sha256": "97a73be43e75dc5fa913d5e1f701a80f0ef3281cd1e76c3d3239709a79f818b7",
+    "paths_portabilized": true,
+    "working_copy_sha256": "979e1ced3305d8cea88c3a8b3448f7ee112ac5d0fe1305e23c1440732ae984bc"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_famatch_all2000_b2.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_famatch_all2000_b2.yml",
     "source_sha256": "8f781f76f871e273ab3f8246789b0aa81d0fb67527595b459274e901a049ab1c",
-    "published_sha256": "b1a1b6c8026129bd36a19255fa7b2fd714d17784d8afdfc9760780eaf0a58cb1",
-    "paths_portabilized": true
+    "published_sha256": "f45cbe48ce5da544ffb7799e3abc2834a2bce05253379e1c0f2fe4367069c347",
+    "paths_portabilized": true,
+    "working_copy_sha256": "b1a1b6c8026129bd36a19255fa7b2fd714d17784d8afdfc9760780eaf0a58cb1"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_familymatch_b2.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_familymatch_b2.yml",
     "source_sha256": "a0fd0bcffb7bf0222492be727e517835ae4c0854cf8dc922a28e5536560cb237",
-    "published_sha256": "d45a0b79c773773fe25d40fb2744b7f41de7fc4735d8a5dca66486d6f2cd0395",
-    "paths_portabilized": true
+    "published_sha256": "a8e79da0330cf8155c5409ed9b102a2effcb7ec36838dc3a6ab6f85f74360c75",
+    "paths_portabilized": true,
+    "working_copy_sha256": "d45a0b79c773773fe25d40fb2744b7f41de7fc4735d8a5dca66486d6f2cd0395"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_familymatch_rect736_b2.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_familymatch_rect736_b2.yml",
     "source_sha256": "21634d7b1fc424e2bc0be5dcf2e9857cf5ce0b897c7698677b9ce1bbd22c9709",
-    "published_sha256": "e1611db8b832fb2e878206066106f3b58ab6240aeb9aa04ac988409d4b507f0a",
-    "paths_portabilized": true
+    "published_sha256": "d34889086fe1902b9b104cca4ceea24a8da20bb2dd33c825c03ec891b68ed62f",
+    "paths_portabilized": true,
+    "working_copy_sha256": "e1611db8b832fb2e878206066106f3b58ab6240aeb9aa04ac988409d4b507f0a"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_mm_all2000_k10_cache_b8.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_mm_all2000_k10_cache_b8.yml",
     "source_sha256": "ba889ea992698525667a086c2b46f6fb8a2e6b7169619cb2b1129b68ab256bd9",
-    "published_sha256": "4e60ac67b2ac5340d2910117755cfb58dd17042a80d65175800016fc0da6cefb",
-    "paths_portabilized": true
+    "published_sha256": "fd9d01a557d97528a1cb9898cfaffaae8e2a1bf51a017ac14ee5f8b756ba3b70",
+    "paths_portabilized": true,
+    "working_copy_sha256": "4e60ac67b2ac5340d2910117755cfb58dd17042a80d65175800016fc0da6cefb"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_mm_cache_b8.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_mm_cache_b8.yml",
     "source_sha256": "285db248af7155053ad769320585fd23ed28950a3dc0f918c8821718b288973f",
-    "published_sha256": "ca68b2bcb63ec90791fb4fb18a6e973ad0a007cc6b541bac777906fdab4f24cc",
-    "paths_portabilized": true
+    "published_sha256": "daa5c996d71b50955a5ac3662d396bc1752d1c5489a3e7ea180fe90574b86fe9",
+    "paths_portabilized": true,
+    "working_copy_sha256": "ca68b2bcb63ec90791fb4fb18a6e973ad0a007cc6b541bac777906fdab4f24cc"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_mm_familymatch_b2.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_mm_familymatch_b2.yml",
     "source_sha256": "7b5ebffaeb9a2b4d3ac537f29d40d16e8f707c4f45b612ecc52547d993a3d37d",
-    "published_sha256": "ee385c9822c5f0588815b8536309ee1fa40a5f333d277bc25d47c0c585b444a1",
-    "paths_portabilized": true
+    "published_sha256": "60b50937db9b1daca200d6bd29038d9a0b48f367ed749de810dead4d0b3a5f7e",
+    "paths_portabilized": true,
+    "working_copy_sha256": "ee385c9822c5f0588815b8536309ee1fa40a5f333d277bc25d47c0c585b444a1"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare.yml",
     "source_sha256": "30ed4ebdfa007cc2f3c4d8f454978a8590a17685ab0eae5dfce4904ea97c5088",
-    "published_sha256": "97d29d84e8559fb63484bb81979f206efbbc815e50aff9e445e1a1a094b06a3e",
-    "paths_portabilized": true
+    "published_sha256": "e46c458d1d141e54b3e32a8f0ae471dfabc534d4ccde356fb6c4731ed857fc08",
+    "paths_portabilized": true,
+    "working_copy_sha256": "97d29d84e8559fb63484bb81979f206efbbc815e50aff9e445e1a1a094b06a3e"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare5.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare5.yml",
     "source_sha256": "9c8fabbd37d303f943da3357b4f363e0b1c72e5a688d3cb231c0c14aec4e3280",
-    "published_sha256": "4e09cfbb6aa01eccc6fcd98bdba9dc65fcd9ad91f6d5cf1e836d8fbf2aa7a354",
-    "paths_portabilized": true
+    "published_sha256": "74fe98f427148e4a1f676e589b427935f07ff3d11d5b6ee430976cce447f5515",
+    "paths_portabilized": true,
+    "working_copy_sha256": "4e09cfbb6aa01eccc6fcd98bdba9dc65fcd9ad91f6d5cf1e836d8fbf2aa7a354"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare5_5090.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare5_5090.yml",
     "source_sha256": "bfaa6d0f7b5cb3ef1736f1ef4a9530649dc734b437b702301c628bc69cabca95",
-    "published_sha256": "8fec86418ca1ecc9fb2b5856334e43de9f8d54efe7dfebacd8fc1d4003ee9ab1",
-    "paths_portabilized": true
+    "published_sha256": "f669d63c6f4316c9ffa55a9a3b15577a1d1eae8317510257fde65caec93be183",
+    "paths_portabilized": true,
+    "working_copy_sha256": "8fec86418ca1ecc9fb2b5856334e43de9f8d54efe7dfebacd8fc1d4003ee9ab1"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare5_5090_b8.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare5_5090_b8.yml",
     "source_sha256": "84cf09fc1a1d6441ae7df690b90c5e9c06cb21ecb803847c1749f3188d8a0695",
-    "published_sha256": "d8e27a54fed32ac8c779eaaa80af551bc7f5e42a9830ab7e889ceabefbe46fad",
-    "paths_portabilized": true
+    "published_sha256": "dc0e7b3410ebc1af75e2caf60df46124970e7b772f0d23dec1aba5d222915d30",
+    "paths_portabilized": true,
+    "working_copy_sha256": "d8e27a54fed32ac8c779eaaa80af551bc7f5e42a9830ab7e889ceabefbe46fad"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare5_5090_b8_cache.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare5_5090_b8_cache.yml",
     "source_sha256": "6312858d489a503e84b5da461a0aa29b412297eaa78ae07915df195314ac183a",
-    "published_sha256": "2780c44d4defd363d46ee70b6a2e90e7b3d9309917f6b8d9d4727fee9372214c",
-    "paths_portabilized": true
+    "published_sha256": "8b998915cee4e575f9017a0ce7dcddfc23e9341644a915c7b6f324bc5de7737b",
+    "paths_portabilized": true,
+    "working_copy_sha256": "2780c44d4defd363d46ee70b6a2e90e7b3d9309917f6b8d9d4727fee9372214c"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare_k10_cache.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare_k10_cache.yml",
     "source_sha256": "9a26c233e484797c954fc853af951448b03449cb27f679b931b1ff6215e7a31d",
-    "published_sha256": "26df7fa50db8ea14108621f07b082d45b8fbab7f5966264a53c6b866ef447f5e",
-    "paths_portabilized": true
+    "published_sha256": "8a366b01095aaa5fe75b39255a9bf5300aaae98a7589f789e154a4dd87aa56b2",
+    "paths_portabilized": true,
+    "working_copy_sha256": "26df7fa50db8ea14108621f07b082d45b8fbab7f5966264a53c6b866ef447f5e"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare_k10_cache_b2.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare_k10_cache_b2.yml",
     "source_sha256": "301489541579ec788a97a2d29cbd842f8a9d7fedf795e9d7c466bfda2b520412",
-    "published_sha256": "805b26e0c87f28555c9c127d69aab892d986418d589c55fa6a169d078db34974",
-    "paths_portabilized": true
+    "published_sha256": "f13fb5432a609d796bf8bfe162ed75f4822e5aa310b09f0714c2b0ff9983c65c",
+    "paths_portabilized": true,
+    "working_copy_sha256": "805b26e0c87f28555c9c127d69aab892d986418d589c55fa6a169d078db34974"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare_k10_cache_b2_1536.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare_k10_cache_b2_1536.yml",
     "source_sha256": "e70c6b63aad1c66940384c637ba80b118d14e540bcc5e981a856d700ea1766f0",
-    "published_sha256": "a02cefe37268621506b6582e323c26aac20853150610cddd2df1e2733dc7b7e1",
-    "paths_portabilized": true
+    "published_sha256": "feb00b192a9650dceec4fc713090df465b9dca29e82e71fb09d7a834c552eeed",
+    "paths_portabilized": true,
+    "working_copy_sha256": "a02cefe37268621506b6582e323c26aac20853150610cddd2df1e2733dc7b7e1"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare_k10_cache_b4.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare_k10_cache_b4.yml",
     "source_sha256": "4b064cddc4e287acca686d16e5a8aa68d29c1f7f582ec14d26ea34597499e3c6",
-    "published_sha256": "851bf4d75de449d8816c6ae48cdbbc3f32ddb267018311b9bae7c335747bd05f",
-    "paths_portabilized": true
+    "published_sha256": "68af8555afa8b79e7d673650f7c1cdf7398cf82f3275707f4ddbaca822027368",
+    "paths_portabilized": true,
+    "working_copy_sha256": "851bf4d75de449d8816c6ae48cdbbc3f32ddb267018311b9bae7c335747bd05f"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare_k10_cache_b6.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare_k10_cache_b6.yml",
     "source_sha256": "66df328850d97a95d87461ddc767b3a0909451616b313dd04b9277dc7f7ff6e4",
-    "published_sha256": "63f6cfb39f042d612c4217eec384119853b4e1462d2408b7967dc0010a98b699",
-    "paths_portabilized": true
+    "published_sha256": "12055071d2320176f11f17338bc0a456ef592e585c0835fe27788b24e9a724db",
+    "paths_portabilized": true,
+    "working_copy_sha256": "63f6cfb39f042d612c4217eec384119853b4e1462d2408b7967dc0010a98b699"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare_k10_cache_b8.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare_k10_cache_b8.yml",
     "source_sha256": "a5b939940a596e807f65cd9f2e2a7b8204c4d36da3b14a7675eef9b7c5ed60bd",
-    "published_sha256": "119187c230e9a7f15b75f4d69eb39ce9b5fb73cbc4ee8284cab7ac8c4648bbe5",
-    "paths_portabilized": true
+    "published_sha256": "af1ccb990fc1f23b80482709eea6ca9da7a21c19a20d5a4c0251a0f8839b1494",
+    "paths_portabilized": true,
+    "working_copy_sha256": "119187c230e9a7f15b75f4d69eb39ce9b5fb73cbc4ee8284cab7ac8c4648bbe5"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare_k10_cache_b8_saug.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare_k10_cache_b8_saug.yml",
     "source_sha256": "4bc9ebb4d80bb803a7485661fdeab5df45d887e594c3feccae45439b40b65d03",
-    "published_sha256": "ffb53783df5c77ae07662f996602553bbd234e33a63414c8f788ffde5069c03b",
-    "paths_portabilized": true
+    "published_sha256": "902291c888407af5323460d0809f07a16a020e63f70a4fd89522448cbe3cd4a2",
+    "paths_portabilized": true,
+    "working_copy_sha256": "ffb53783df5c77ae07662f996602553bbd234e33a63414c8f788ffde5069c03b"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/aic_detection_rare_k5_cache.yml",
     "published": "configs/archive/dfine_dataset/aic_detection_rare_k5_cache.yml",
     "source_sha256": "f158b89226118b1055518b1775b0b109a241af3132bd927b35c53a849fcb2eb1",
-    "published_sha256": "7709388b6eb4e77f52e7069964117ef38d21d8457c27339c5483f88b496637a4",
-    "paths_portabilized": true
+    "published_sha256": "f7bb55bcbfceb6cb0a2c9105b372c69f54d14d0f1d483e48a5eb9b7921ea5797",
+    "paths_portabilized": true,
+    "working_copy_sha256": "7709388b6eb4e77f52e7069964117ef38d21d8457c27339c5483f88b496637a4"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/coco_detection.yml",
     "published": "configs/archive/dfine_dataset/coco_detection.yml",
     "source_sha256": "4a0eb4d4ca3e8e2a7e9bb9bd736a7e6953597bcbbd7d0ccb8f7a8e2f0de8e41e",
-    "published_sha256": "4a0eb4d4ca3e8e2a7e9bb9bd736a7e6953597bcbbd7d0ccb8f7a8e2f0de8e41e",
-    "paths_portabilized": false
+    "published_sha256": "8786d291debaddbfd06365586123a2949b5903ed351d5722f8c9dfc1fb8202ed",
+    "paths_portabilized": false,
+    "working_copy_sha256": "4a0eb4d4ca3e8e2a7e9bb9bd736a7e6953597bcbbd7d0ccb8f7a8e2f0de8e41e"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/crowdhuman_detection.yml",
     "published": "configs/archive/dfine_dataset/crowdhuman_detection.yml",
     "source_sha256": "74586017b64ee10628eb62d7eda1e8a9b80d215de47fd83f5a7aebcd2f2b004e",
-    "published_sha256": "74586017b64ee10628eb62d7eda1e8a9b80d215de47fd83f5a7aebcd2f2b004e",
-    "paths_portabilized": false
+    "published_sha256": "ef6fa44446aab3089fbda74b6fb7dab40c314787d7a12e969835d1cbb9ed1122",
+    "paths_portabilized": false,
+    "working_copy_sha256": "74586017b64ee10628eb62d7eda1e8a9b80d215de47fd83f5a7aebcd2f2b004e"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/custom_detection.yml",
     "published": "configs/archive/dfine_dataset/custom_detection.yml",
     "source_sha256": "d1def1bb9f35ef3023592eb3ec4a664a037436f1487a85934777960e588b5e2a",
-    "published_sha256": "d1def1bb9f35ef3023592eb3ec4a664a037436f1487a85934777960e588b5e2a",
-    "paths_portabilized": false
+    "published_sha256": "3e70e5f4d45a4c5df3bb18d48de602007a203dd237bb69293bdde9443c23d06f",
+    "paths_portabilized": false,
+    "working_copy_sha256": "d1def1bb9f35ef3023592eb3ec4a664a037436f1487a85934777960e588b5e2a"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/obj365_detection.yml",
     "published": "configs/archive/dfine_dataset/obj365_detection.yml",
     "source_sha256": "4520102af0e08840b17de352e3bef7bfa1136c8262e1bd7b192003ac5bb56f3e",
-    "published_sha256": "4520102af0e08840b17de352e3bef7bfa1136c8262e1bd7b192003ac5bb56f3e",
-    "paths_portabilized": false
+    "published_sha256": "6eacc3440def1d20ad773879682419a0847ef3281d04df5e5dd2447d42a2bd16",
+    "paths_portabilized": false,
+    "working_copy_sha256": "4520102af0e08840b17de352e3bef7bfa1136c8262e1bd7b192003ac5bb56f3e"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_dataset/voc_detection.yml",
     "published": "configs/archive/dfine_dataset/voc_detection.yml",
     "source_sha256": "41c4cb04ba6d57cca925ae1ba96725b43d58f1251b5c0b888da42d05726505e6",
-    "published_sha256": "41c4cb04ba6d57cca925ae1ba96725b43d58f1251b5c0b888da42d05726505e6",
-    "paths_portabilized": false
+    "published_sha256": "92eb4e855896329bd08d2ff329ed2ae3e05c8f8a543eec090fd12964427673a0",
+    "paths_portabilized": false,
+    "working_copy_sha256": "41c4cb04ba6d57cca925ae1ba96725b43d58f1251b5c0b888da42d05726505e6"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/objects365/dfine_hgnetv2_l_obj2custom.yml",
     "published": "configs/archive/dfine_custom/objects365/dfine_hgnetv2_l_obj2custom.yml",
     "source_sha256": "0f2e3f58932c89251e2697d03ccc80c11d43b4c8dae7fd48387d0405cfb2db6d",
-    "published_sha256": "0f2e3f58932c89251e2697d03ccc80c11d43b4c8dae7fd48387d0405cfb2db6d",
-    "paths_portabilized": false
+    "published_sha256": "53cdea75eb765b3cb8818d07ea02b6514c939d91843bcff12ad09c37e7268091",
+    "paths_portabilized": false,
+    "working_copy_sha256": "0f2e3f58932c89251e2697d03ccc80c11d43b4c8dae7fd48387d0405cfb2db6d"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/objects365/dfine_hgnetv2_m_obj2custom.yml",
     "published": "configs/archive/dfine_custom/objects365/dfine_hgnetv2_m_obj2custom.yml",
     "source_sha256": "bd49c8be19506212ed8b76fa123d1729484a87995059314fa527ebfccd6244ae",
-    "published_sha256": "bd49c8be19506212ed8b76fa123d1729484a87995059314fa527ebfccd6244ae",
-    "paths_portabilized": false
+    "published_sha256": "be26464289acec8ac2881cd45f58ac174f06acaf53c2fa045d643780673bd2bc",
+    "paths_portabilized": false,
+    "working_copy_sha256": "bd49c8be19506212ed8b76fa123d1729484a87995059314fa527ebfccd6244ae"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/objects365/dfine_hgnetv2_s_obj2custom.yml",
     "published": "configs/archive/dfine_custom/objects365/dfine_hgnetv2_s_obj2custom.yml",
     "source_sha256": "6b44c0baad7bbcd728dc70639ca0b42951ead9731862d90262040134514e2eb0",
-    "published_sha256": "6b44c0baad7bbcd728dc70639ca0b42951ead9731862d90262040134514e2eb0",
-    "paths_portabilized": false
+    "published_sha256": "d56ad9fae3f5d365f9d7d3abc9c02a43156eec043b356032f5332f96db9d638e",
+    "paths_portabilized": false,
+    "working_copy_sha256": "6b44c0baad7bbcd728dc70639ca0b42951ead9731862d90262040134514e2eb0"
   },
   {
     "source": "01_文档/作品文档/代码与数据/configs/dfine_custom/objects365/dfine_hgnetv2_x_obj2custom.yml",
     "published": "configs/archive/dfine_custom/objects365/dfine_hgnetv2_x_obj2custom.yml",
     "source_sha256": "dfa833280ed2a2dd5541977e958ae983e0ceda03e29615e3c89b90c6251f4d91",
-    "published_sha256": "dfa833280ed2a2dd5541977e958ae983e0ceda03e29615e3c89b90c6251f4d91",
-    "paths_portabilized": false
+    "published_sha256": "f0a1b94dddb9129f90b29c566ee69ff26cc41228bcd0592fb739c8208d9ba946",
+    "paths_portabilized": false,
+    "working_copy_sha256": "dfa833280ed2a2dd5541977e958ae983e0ceda03e29615e3c89b90c6251f4d91"
   }
 ]

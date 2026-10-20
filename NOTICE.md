@@ -8,3 +8,5 @@
 - [pycocotools](https://github.com/cocodataset/cocoapi)：COCO 评测对照实现。
 
 模型、数据和上游依赖各自的权利与许可证归原权利人所有。此归档没有为第三方材料重新授权。
+
+清单哈希口径：`source_sha256` 为原工作区文件；`working_copy_sha256` 为导出时本地副本；`published_sha256` 为 Git 存储的文本内容（LF 换行），用于核对公开版本。
