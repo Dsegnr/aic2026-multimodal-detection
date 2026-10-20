@@ -1,0 +1,43 @@
+# Arm：D-FINE-L（B4）@1280 + **全 2000 张 + k10** + **24 轮**
+# 动机：把目前两个"榜上/本地为正"的轴叠起来 —— ① 容量（L，榜上 +1.374 已验证）
+#       ② 数据（2000 张，S 族上 +0.03，未在 L 上验证）③ 更长日程（L 的 16 轮尾段仍在涨）
+# ⚠️ 训练集含官方 val 的 300 张 ⇒ 内部/本地 val 全失效，只能靠榜分判定。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_all2000_k10_cache_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_all2000_24e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1280, 1280]
+
+epochs: 24
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 18
+  collate_fn:
+    stop_epoch: 18
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

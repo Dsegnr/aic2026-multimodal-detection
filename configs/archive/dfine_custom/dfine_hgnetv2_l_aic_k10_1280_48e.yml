@@ -1,0 +1,41 @@
+# Arm（第二台 4090 · Track A2）：D-FINE-L @1280 + k10 + **48 轮**（把 1280 日程拉到最长）
+# 依据：1280 上 16→24 轮曾 +0.23 榜分；48 轮是"日程轴"的端点，用来确认这条轴是否还有余量。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_k10_1280_48e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1280, 1280]
+
+epochs: 48
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 36
+  collate_fn:
+    stop_epoch: 36
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

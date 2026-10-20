@@ -1,0 +1,62 @@
+# 与 aic_detection.yml 逐字一致，**只把 1280 改成 1536**（训练与验证的 Resize、collate 的 base_size）。
+# 目的：让 "D-FINE-S @1536" 相对 "D-FINE-S @1280" 只差一个变量。
+task: detection
+
+evaluator:
+  type: CocoEvaluator
+  iou_types: ['bbox', ]
+
+num_classes: 12
+# MUST stay False: with remap_mscoco_category=False the source does
+#   labels = [obj["category_id"] for obj in anno]
+# i.e. category_id is used directly as the class label, so our COCO json
+# must use 0-based ids 0..11 (see src/eval/yolo2coco.py).
+remap_mscoco_category: False
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/aic/images
+    ann_file: ./data/aic_coco/train.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: RandomPhotometricDistort, p: 0.5}
+        - {type: RandomZoomOut, fill: 0}
+        - {type: RandomIoUCrop, p: 0.8}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: RandomHorizontalFlip}
+        - {type: Resize, size: [1536, 1536]}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+        - {type: ConvertBoxes, fmt: 'cxcywh', normalize: True}
+  shuffle: True
+  num_workers: 4
+  drop_last: True
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1536
+    base_size_repeat: 3
+  total_batch_size: 4
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/aic/images
+    ann_file: ./data/aic_coco/val.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: Resize, size: [1536, 1536]}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+  shuffle: False
+  num_workers: 4
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1536
+  total_batch_size: 8

@@ -1,0 +1,43 @@
+# Arm：D-FINE-L（B4，Objects365+COCO 57.3）@1280 + **全 2000 张** + k10，16 轮
+# 与 dfine_hgnetv2_l_aic_k10.yml 的唯一差别 = 数据集换成 all2000 版（多 300 张官方 val）
+# ⚠️ 本地口径全被污染，只能用榜分判定（与今天上午 50.148 那条 all2000 臂同一处理）。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_all2000_k10_cache_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_all2000
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+# 官方 L obj2coco 块逐字
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1280, 1280]
+
+epochs: 16
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 12
+  collate_fn:
+    stop_epoch: 12
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

@@ -1,0 +1,61 @@
+# Weak3510 finetune from X32 ep23 last (57.20): sign/bicycle/uav oversample k<=4, low-LR 4e, square 1280.
+# Data-side only; no structure or class changes. Gate: only run if rect736 and 6ch both fail to beat 57.20.
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_familymatch_weak3510_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_x_aic_familymatch_weak3510_4e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B5'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  hidden_dim: 384
+  dim_feedforward: 2048
+  eval_spatial_size: [1280, 1280]
+
+DFINETransformer:
+  feat_channels: [384, 384, 384]
+  reg_scale: 8
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.0000025
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn)).*$'
+      weight_decay: 0.
+
+  lr: 0.0001
+  betas: [0.9, 0.999]
+  weight_decay: 0.000125
+
+epochs: 4
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 3
+  collate_fn:
+    stop_epoch: 4
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

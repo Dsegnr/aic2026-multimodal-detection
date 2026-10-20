@@ -1,0 +1,58 @@
+# 与 aic_detection_rare_k10_cache_b2.yml 同源，只把 train 的 ann_file 换成**全 2000 张**的 k10 版。
+# ⚠️ val（300 张）被并入训练 ⇒ 内部 val 与本地 val300 全部失效，只能用榜分判定。
+task: detection
+
+evaluator:
+  type: CocoEvaluator
+  iou_types: ['bbox', ]
+
+num_classes: 12
+remap_mscoco_category: False
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/images
+    ann_file: ./data/aic_coco/train_all2000_k10.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: RandomPhotometricDistort, p: 0.5}
+        - {type: RandomZoomOut, fill: 0}
+        - {type: RandomIoUCrop, p: 0.8}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: RandomHorizontalFlip}
+        - {type: Resize, size: [1280, 1280]}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+        - {type: ConvertBoxes, fmt: 'cxcywh', normalize: True}
+  shuffle: True
+  num_workers: 16
+  drop_last: True
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+    base_size_repeat: 3
+  total_batch_size: 2
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/images
+    ann_file: ./data/aic_coco/val.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: Resize, size: [1280, 1280]}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+  shuffle: False
+  num_workers: 4
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+  total_batch_size: 4

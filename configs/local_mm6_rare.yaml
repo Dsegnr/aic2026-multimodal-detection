@@ -1,0 +1,24 @@
+# 本地版：三模态 6 通道 + 稀有类粘贴（路径指向本机工作区）
+# 用途：在本地 4060 上做**冒烟测试**，验证"大模型 + 6 通道 + 多阶段融合 + OIV7 对齐初始化"
+#       这套配方能不能跑通，避免把 30 小时的服务器训练浪费在一个形状/加载错误上。
+path: ./data
+train: ./splits/lbproxy_train.txt
+val: ./splits/lbproxy_val.txt
+nc: 12
+names: ['person', 'boat', 'animal', 'seat', 'sign', 'bicycle', 'car', 'ball', 'light', 'garbage_can', 'uav', 'tricycle']
+channels: 6
+extra_modality_dirs:
+  - ./data/aic_ir/images
+  - ./data/aic_dp/images
+extra_modality_types: ['ir', 'depth']
+depth_min_mm: 300
+depth_max_mm: 20000
+depth_encoding: linear
+
+rare_paste:
+  enable: true
+  depth_dir: ./data/aic_dp/images
+  classes: [1, 7, 11]
+  prob: 0.5
+  max_paste: 2
+  depth_tol: 0.35

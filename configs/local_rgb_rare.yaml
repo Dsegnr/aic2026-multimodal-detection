@@ -1,0 +1,14 @@
+# 本地版：纯 RGB（3 通道）+ 稀有类粘贴。用于 4060 上的对照臂。
+path: ./data
+train: ./splits/lbproxy_train.txt
+val: ./splits/lbproxy_val.txt
+nc: 12
+names: ['person', 'boat', 'animal', 'seat', 'sign', 'bicycle', 'car', 'ball', 'light', 'garbage_can', 'uav', 'tricycle']
+
+rare_paste:
+  enable: true
+  depth_dir: ./data/aic_dp/images
+  classes: [1, 7, 11]
+  prob: 0.5
+  max_paste: 2
+  depth_tol: 0.35

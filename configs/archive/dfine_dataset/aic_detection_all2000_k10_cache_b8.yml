@@ -1,0 +1,58 @@
+# 数据轴实验：把**官方 2000 张全部**用于训练（train 1700 + val 300 合并），再做稀类过采样 k10。
+# 与榜验证配方的唯一变量 = 训练数据量（1700+… → 2000+…），尺度/批/增广/轮数与 saug48 同源。
+task: detection
+
+evaluator:
+  type: CocoEvaluator
+  iou_types: ['bbox', ]
+
+num_classes: 12
+remap_mscoco_category: False
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/images
+    ann_file: ./data/aic_coco/train_all2000_k10.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: RandomPhotometricDistort, p: 0.5}
+        - {type: RandomZoomOut, fill: 0}
+        - {type: RandomIoUCrop, p: 0.8}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: RandomHorizontalFlip}
+        - {type: Resize, size: [1280, 1280]}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+        - {type: ConvertBoxes, fmt: 'cxcywh', normalize: True}
+  shuffle: True
+  num_workers: 24
+  drop_last: True
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+    base_size_repeat: 3
+  total_batch_size: 8
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/images
+    ann_file: ./data/aic_coco/val.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: Resize, size: [1280, 1280]}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+  shuffle: False
+  num_workers: 8
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+  total_batch_size: 16

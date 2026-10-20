@@ -1,0 +1,67 @@
+# Arm：D-FINE-X（HGNetv2-B5，62M，Objects365+COCO 官方 59.3）@1280 + 稀类 k10（1700 张），16 轮
+# 动机：L 臂（B4，官方 57.3）本轮拿到 val300 57.21（最高），容量轴被打通 ⇒ 再上一档到 X。
+# 与官方 configs/dfine/objects365/dfine_hgnetv2_x_obj2coco.yml 的差别只有三处：
+#   ① 数据集换成我们的 k10 缓存（batch 2 版：X 在 1280 下比 B4 更吃显存）
+#   ② 顶层 eval_spatial_size: null + HybridEncoder.eval_spatial_size [1280,1280]
+#   ③ 轮数 36 → 16（时间盒）
+# 其余（B5 / freeze_stem_only / freeze_at 0 / freeze_norm、hidden_dim 384、dim_feedforward 2048、
+#      feat_channels [384,384,384]、reg_scale 8、backbone lr 2.5e-6 / head 2.5e-4）全部继承官方。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_x_aic_k10
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B5'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  hidden_dim: 384
+  dim_feedforward: 2048
+  eval_spatial_size: [1280, 1280]
+
+DFINETransformer:
+  feat_channels: [384, 384, 384]
+  reg_scale: 8
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.0000025
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn)).*$'
+      weight_decay: 0.
+
+  lr: 0.00025
+  betas: [0.9, 0.999]
+  weight_decay: 0.000125
+
+epochs: 16
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 12
+  collate_fn:
+    stop_epoch: 12
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

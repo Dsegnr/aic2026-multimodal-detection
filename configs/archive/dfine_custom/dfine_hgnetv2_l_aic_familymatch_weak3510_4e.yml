@@ -1,0 +1,58 @@
+# L-weak3510 微调（从 L 族最优权重出发）：sign/bicycle/uav 定向过采样（k≤4），低 LR 4 轮，方形 1280。
+# 动机（10-03 数据）：L 族是"本地→榜"转移最好的家族（56.22 → 榜 52.007）；X32 本地 +0.98 未转移。
+#   弱类瓶颈 = bicycle/sign/uav 的高 IoU 框精度（AP50 高、AP50-95 低）。
+# 数据 = train_familymatch_weak3510.json（已含"按测试集家族构成重采样" + 弱类过采样），与 X 版共用同一份。
+# 判据：本地家族加权 ≥56.22 且 num6 ≥54.08，且高于当时最优候选，才占额度。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_familymatch_weak3510_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_familymatch_weak3510_4e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1280, 1280]
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.0000025
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn)).*$'
+      weight_decay: 0.
+
+  lr: 0.0001
+  betas: [0.9, 0.999]
+  weight_decay: 0.000125
+
+epochs: 4
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 3
+  collate_fn:
+    stop_epoch: 4
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

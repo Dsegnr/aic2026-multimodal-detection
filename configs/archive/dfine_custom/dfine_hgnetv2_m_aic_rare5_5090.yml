@@ -1,0 +1,77 @@
+# D-FINE-**M** @1280 + 稀类过采样 —— 在"榜分验证过的家族"上直接上大一号的模型。
+#
+# 依据（全部是榜分证据，不是本地分）：
+#   · 我们复赛最好 50.1170 = D-FINE-S + 稀类过采样 + 72 轮 + 手写 3 视图 TTA@1280；
+#   · DINOv3/DEIMv2-L（新家族）本地 53.07 → 复赛榜 46.384（−6.7）⇒ **换家族不是出路**；
+#   · 唯一还没试过的提升方向：**在验证过的家族上换更大骨干**（S 的 COCO 50.7 → M 52.9）。
+#
+# 结构块与官方 M 配置逐字一致；只改：数据集 include（rare5）、输出目录、batch。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare5_5090.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_m_aic_rare5_5090
+
+# null ⇒ encoder/decoder 动态建 pos_embed/anchors，多尺度 TTA 需要（官方 M 配置同款）
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B2'
+  return_idx: [1, 2, 3]
+  freeze_at: -1
+  freeze_norm: False
+  use_lab: True
+
+DFINETransformer:
+  num_layers: 4
+  eval_idx: -1
+
+HybridEncoder:
+  in_channels: [384, 768, 1536]
+  hidden_dim: 256
+  depth_mult: 0.67
+  expansion: 0.5
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.000125
+    -
+      params: '^(?=.*backbone)(?=.*norm|bn).*$'
+      lr: 0.000125
+      weight_decay: 0.
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn|bias)).*$'
+      weight_decay: 0.
+  lr: 0.00025
+  betas: [0.9, 0.999]
+  weight_decay: 0.000125
+
+epochs: 72
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 64
+  collate_fn:
+    stop_epoch: 64
+    ema_restart_decay: 0.9999
+    # ★ 2026-09-24：官方 M 配置这里是 10（每批做 10 次多尺度重排），实测在 batch 2 下
+    #   把速度拖到 2.6 s/it（≈65 min/轮 ⇒ 72 轮要 78 小时）。而我们**榜分验证过的 S 配方**
+    #   （50.1170 那一版）用的是 3 ⇒ 改成 3，既对齐已验证配方，也把 collate 开销降到 1/3。
+    base_size_repeat: 3
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

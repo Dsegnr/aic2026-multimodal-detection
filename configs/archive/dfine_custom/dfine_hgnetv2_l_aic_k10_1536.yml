@@ -1,0 +1,43 @@
+# Arm：D-FINE-L（B4，官方低 LR）@**1536** + k10（1700 张），16 轮
+# 与 dfine_hgnetv2_l_aic_k10.yml 的唯一差别 = 数据集换成 1536 版 + eval_spatial_size 1536
+#   ① 训练与推理**同尺度**（1536），不是"改推理尺度"那种已知会掉分的做法；
+#   ② 推理时用 dfine_infer.py --imgsz 1536（与训练一致）。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b2_1536.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_k10_1536
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1536, 1536]
+
+epochs: 16
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 12
+  collate_fn:
+    stop_epoch: 12
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

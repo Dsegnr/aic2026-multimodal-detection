@@ -1,0 +1,6 @@
+# 自动生成：lbproxy 划分
+path: .
+train: splits/lbproxy_train.txt
+val: splits/lbproxy_val.txt
+nc: 12
+names: ['person', 'boat', 'animal', 'seat', 'sign', 'bicycle', 'car', 'ball', 'light', 'garbage_can', 'uav', 'tricycle']

@@ -1,0 +1,60 @@
+# 与 aic_detection_rare_k10_cache.yml 同源，只改两处：
+#   ① train batch 4 → 8（4090 独占 24 GB，batch 8 更省固定开销）
+#   ② 增广加强（域随机化）：PhotometricDistort p 0.5→0.9、RandomIoUCrop p 0.8→1.0
+#      —— 这是"缩小小样本域差异"的标准手段，也是我们唯一没测过的增广轴
+task: detection
+
+evaluator:
+  type: CocoEvaluator
+  iou_types: ['bbox', ]
+
+num_classes: 12
+remap_mscoco_category: False
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/images
+    ann_file: ./data/aic_coco/train_rare_k10.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: RandomPhotometricDistort, p: 0.9}
+        - {type: RandomZoomOut, fill: 0}
+        - {type: RandomIoUCrop, p: 1.0}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: RandomHorizontalFlip}
+        - {type: Resize, size: [1280, 1280]}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+        - {type: ConvertBoxes, fmt: 'cxcywh', normalize: True}
+  shuffle: True
+  num_workers: 24
+  drop_last: True
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+    base_size_repeat: 3
+  total_batch_size: 8
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/images
+    ann_file: ./data/aic_coco/val.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: Resize, size: [1280, 1280]}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+  shuffle: False
+  num_workers: 8
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+  total_batch_size: 16

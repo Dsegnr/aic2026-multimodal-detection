@@ -1,0 +1,58 @@
+# 全 2000 张 + k10 + **1536** 输入（与 aic_detection_all2000_k10_cache_b2.yml 唯一差别 = Resize/base_size 1280→1536）
+# ⚠️ val 已并入训练 ⇒ 本地口径失效，只能靠榜分判定
+task: detection
+
+evaluator:
+  type: CocoEvaluator
+  iou_types: ['bbox', ]
+
+num_classes: 12
+remap_mscoco_category: False
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/images
+    ann_file: ./data/aic_coco/train_all2000_k10.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: RandomPhotometricDistort, p: 0.5}
+        - {type: RandomZoomOut, fill: 0}
+        - {type: RandomIoUCrop, p: 0.8}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: RandomHorizontalFlip}
+        - {type: Resize, size: [1536, 1536]}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+        - {type: ConvertBoxes, fmt: 'cxcywh', normalize: True}
+  shuffle: True
+  num_workers: 16
+  drop_last: True
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1536
+    base_size_repeat: 3
+  total_batch_size: 2
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/images
+    ann_file: ./data/aic_coco/val.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: Resize, size: [1536, 1536]}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+  shuffle: False
+  num_workers: 4
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1536
+  total_batch_size: 4

@@ -1,0 +1,58 @@
+# L-Rect736 微调：从 L 族最优权重出发，宽屏 736×1280 低 LR 8 轮。
+# 用途：若 GPU#1 的 X-Rect736（8e）证明"矩形几何适配"有效，则在 L 族（本地→榜转移最好）复刻一版，
+#   作为 10-05 的候选（GPU#2 于 10-04 凌晨空出时启动）。
+# 超参与 X-Rect736 对齐（backbone 2.5e-6 / base 1e-4，epochs 8 / stop 8，无 stage2 重启）。
+# 数据 = aic_detection_familymatch_rect736_b2.yml（与 X 版同一份），init 用当时 L 族最优 best_stg2/last。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_familymatch_rect736_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_familymatch_rect736_8e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [736, 1280]
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.0000025
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn)).*$'
+      weight_decay: 0.
+
+  lr: 0.0001
+  betas: [0.9, 0.999]
+  weight_decay: 0.000125
+
+epochs: 8
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 6
+  collate_fn:
+    stop_epoch: 8
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

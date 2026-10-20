@@ -1,0 +1,42 @@
+# Arm：D-FINE-L @**1280** + k10 + **32 轮**（长日程，1280 口径）
+# 依据：L 在 1280 上 16→24 轮拿到榜 +0.23；而 1536 从零训练在 16 轮时**反而低 1.1 分**（实测），
+#       所以"继续在 1280 上拉长日程"是当前证据链更支持的方向。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_k10_1280_32e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1280, 1280]
+
+epochs: 32
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 24
+  collate_fn:
+    stop_epoch: 24
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

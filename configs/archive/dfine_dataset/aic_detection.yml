@@ -1,0 +1,62 @@
+task: detection
+
+evaluator:
+  type: CocoEvaluator
+  iou_types: ['bbox', ]
+
+num_classes: 12
+# MUST stay False: with remap_mscoco_category=False the source does
+#   labels = [obj["category_id"] for obj in anno]
+# i.e. category_id is used directly as the class label, so our COCO json
+# must use 0-based ids 0..11 (see src/eval/yolo2coco.py).
+remap_mscoco_category: False
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/aic/images
+    ann_file: ./data/aic_coco/train.json
+    return_masks: False
+    transforms:
+      type: Compose
+      # ops must be listed explicitly: D-FINE's own dataloader.yml uses
+      # 640x640 + total_batch_size 32, which is NOT our setting (1280 / batch 4).
+      ops:
+        - {type: RandomPhotometricDistort, p: 0.5}
+        - {type: RandomZoomOut, fill: 0}
+        - {type: RandomIoUCrop, p: 0.8}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: RandomHorizontalFlip}
+        - {type: Resize, size: [1280, 1280]}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+        - {type: ConvertBoxes, fmt: 'cxcywh', normalize: True}
+  shuffle: True
+  num_workers: 4
+  drop_last: True
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+    base_size_repeat: 3
+  total_batch_size: 4
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/aic/images
+    ann_file: ./data/aic_coco/val.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: Resize, size: [1280, 1280]}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+  shuffle: False
+  num_workers: 4
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+  total_batch_size: 16

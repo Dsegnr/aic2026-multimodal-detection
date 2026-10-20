@@ -1,0 +1,10 @@
+# 只用于**诊断/推理**，不改训练配置：
+# S 版两个配置（s_aic / s_aic_rare）都在 HybridEncoder 段里写了
+#   eval_spatial_size: [1280, 1280]
+# 而 M 版（rare5_5090_b8）漏了这一行 ⇒ HybridEncoder 通过 __share__ 拿到的是
+# 顶层那个 eval_spatial_size: null ⇒ 评测/推理时走的是"动态"分支。
+# 本文件只补这一行，其余全部继承，用来验证"是不是它让整条臂输出退化"。
+__include__: ['./dfine_hgnetv2_m_aic_rare5_5090_b8.yml']
+
+HybridEncoder:
+  eval_spatial_size: [1280, 1280]

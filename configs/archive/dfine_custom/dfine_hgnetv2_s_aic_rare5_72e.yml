@@ -1,0 +1,69 @@
+# D-FINE-S @1280 + **稀类过采样**（唯一变量 = 训练样本分布）
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare5.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_s_aic_rare5_72e
+
+# MUST be top level (__share__): 否则验证阶段会崩（详见 dfine_hgnetv2_s_aic.yml 的长注释）
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B0'
+  return_idx: [1, 2, 3]
+  freeze_at: -1
+  freeze_norm: False
+  use_lab: True
+
+DFINETransformer:
+  num_layers: 3
+  eval_idx: -1
+
+HybridEncoder:
+  in_channels: [256, 512, 1024]
+  hidden_dim: 256
+  depth_mult: 0.34
+  expansion: 0.5
+  eval_spatial_size: [1280, 1280]
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.000125
+    -
+      params: '^(?=.*backbone)(?=.*norm|bn).*$'
+      lr: 0.000125
+      weight_decay: 0.
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn|bias)).*$'
+      weight_decay: 0.
+
+  lr: 0.00025
+  betas: [0.9, 0.999]
+  weight_decay: 0.000125
+
+epochs: 72
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 64
+  collate_fn:
+    stop_epoch: 64
+    ema_restart_decay: 0.9999
+    base_size_repeat: 10
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

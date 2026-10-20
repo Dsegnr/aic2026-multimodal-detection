@@ -1,0 +1,48 @@
+# Arm：D-FINE-S @1280 + 稀类过采样 k10 + **增广加强（域随机化）** + 缓存数据
+# 架构块与榜验证配方（50.117）**逐字相同**，唯一变量 = 增广强度。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b8_saug.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_s_aic_k10_saug
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B0'
+  return_idx: [1, 2, 3]
+  freeze_at: -1
+  freeze_norm: False
+  use_lab: True
+
+DFINETransformer:
+  num_layers: 6
+  eval_idx: -1
+
+HybridEncoder:
+  in_channels: [256, 512, 1024]
+  hidden_dim: 256
+  depth_mult: 0.34
+  expansion: 0.5
+  eval_spatial_size: [1280, 1280]
+
+epochs: 24
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 20
+  collate_fn:
+    stop_epoch: 20
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

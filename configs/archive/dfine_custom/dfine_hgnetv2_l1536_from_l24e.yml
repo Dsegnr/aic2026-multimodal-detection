@@ -1,0 +1,65 @@
+# Arm：**渐进升分辨率** —— 从已经训好的 L24e（1280，本地 58.42 / 榜 51.748）权重出发，
+#      在 **1536** 上继续微调 8 轮（学习率减半）。
+#
+# 动机：从零在 1536 上训 16~32 轮成本高（5~11 小时）；而"先在 1280 收敛、再抬到 1536 微调"
+#      是检测里常规的 progressive resizing，收敛快、风险低。若 1536 这条轴成立，它能最快拿到收益；
+#      若 1536 无效，它也不会低于起点太多（起点就是 58.42）。
+#
+# 初始化：`-t ./D-FINE/output/dfine_hgnetv2_l_aic_k10_24e/best_stg2.pth`
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b2_1536.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l1536_from_l24e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1536, 1536]
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.00000625          # 从已收敛模型续训 ⇒ 学习率减半
+    -
+      params: '^(?=.*backbone)(?=.*norm|bn).*$'
+      lr: 0.00000625
+      weight_decay: 0.
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn|bias)).*$'
+      weight_decay: 0.
+
+  lr: 0.000125
+  betas: [0.9, 0.999]
+  weight_decay: 0.000125
+
+epochs: 8
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 5
+  collate_fn:
+    stop_epoch: 5
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

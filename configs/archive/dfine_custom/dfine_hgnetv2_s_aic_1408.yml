@@ -1,0 +1,79 @@
+# D-FINE-S @ **1408**（唯一变量 = 训练分辨率；其余与 dfine_hgnetv2_s_aic.yml 逐字一致）
+#
+# 动机（09-20）：4 篇公众号文章里那篇《钱花在分辨率上，比花在模型上值》给出的结论
+# 与我们自己的实测一致——规模轴 −0.49（RT-DETR-X）、分辨率轴 +0.82~+1.69。
+# 而 D-FINE 是**目前唯一被榜分标定过正偏移的家族**（本地 53.9517 → 榜上 55.6650，+1.71），
+# 所以下一步应该在这个家族上试分辨率，而不是继续换新家族（RF-DETR 的偏移是 −3.14）。
+#
+# 显存预算：D-FINE-S@1280/batch4 峰值 9.31 GB；1408 是 1.44× 面积 ⇒ 估计 ~13.4 GB，
+# 刚好贴着 13.5 GB 的自家上限。所以队列里先试 batch 4（干净单变量），
+# 失败则退到 batch 2（此时步数变 2×，必须记进结论里当混杂）。
+
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_1408.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_s_aic_1408
+
+# MUST be top level (__share__): see the long note in dfine_hgnetv2_s_aic.yml.
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B0'
+  return_idx: [1, 2, 3]
+  freeze_at: -1
+  freeze_norm: False
+  use_lab: True
+
+DFINETransformer:
+  num_layers: 3
+  eval_idx: -1
+
+HybridEncoder:
+  in_channels: [256, 512, 1024]
+  hidden_dim: 256
+  depth_mult: 0.34
+  expansion: 0.5
+  eval_spatial_size: [1408, 1408]
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.000125
+    -
+      params: '^(?=.*backbone)(?=.*norm|bn).*$'
+      lr: 0.000125
+      weight_decay: 0.
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn|bias)).*$'
+      weight_decay: 0.
+
+  lr: 0.00025
+  betas: [0.9, 0.999]
+  weight_decay: 0.000125
+
+epochs: 72
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 64
+  collate_fn:
+    stop_epoch: 64
+    ema_restart_decay: 0.9999
+    base_size_repeat: 10
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.secrets/
+data/
+weights/
+preds/
+runs/
+output/
+submissions/
+reference/
+*.pt
+*.pth
+*.ckpt
+*.zip

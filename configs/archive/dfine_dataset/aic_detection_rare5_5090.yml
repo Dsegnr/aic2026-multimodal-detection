@@ -1,0 +1,59 @@
+# AIC 数据集描述（5090 路径版）—— 训练集用**稀类过采样**版 json
+# 依据：我们复赛榜分最好的那一版（50.1170）就是 D-FINE-S + 稀类过采样 + 1280 + 手写 TTA。
+# 这里只把路径换成 5090 的 /private，并把 batch 降到 2（DEAP 暂停后仍占 18.9 GB，只剩 13 GB）。
+task: detection
+
+evaluator:
+  type: CocoEvaluator
+  iou_types: ['bbox', ]
+
+num_classes: 12
+remap_mscoco_category: False
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/aic/images
+    ann_file: ./data/aic_coco/train_rare5.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: RandomPhotometricDistort, p: 0.5}
+        - {type: RandomZoomOut, fill: 0}
+        - {type: RandomIoUCrop, p: 0.8}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: RandomHorizontalFlip}
+        - {type: Resize, size: [1280, 1280]}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+        - {type: ConvertBoxes, fmt: 'cxcywh', normalize: True}
+  shuffle: True
+  num_workers: 16
+  drop_last: True
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+    base_size_repeat: 3
+  total_batch_size: 2
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/aic/images
+    ann_file: ./data/aic_coco/val.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: Resize, size: [1280, 1280]}
+        - {type: ConvertPILImage, dtype: 'float32', scale: True}
+  shuffle: False
+  num_workers: 4
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+  total_batch_size: 4

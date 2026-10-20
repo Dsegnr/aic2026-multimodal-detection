@@ -1,0 +1,41 @@
+# Arm：D-FINE-L @1536 + k10 + **32 轮**（把"同尺度抬分辨率"这条轴拉长日程吃满尾段）
+# 动机：L 在 1280 上 16→24 轮拿到榜 +0.23；1536 上若 16 轮尾段仍在涨，32 轮值得一跑。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b2_1536.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_k10_1536_32e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1536, 1536]
+
+epochs: 32
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 24
+  collate_fn:
+    stop_epoch: 24
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

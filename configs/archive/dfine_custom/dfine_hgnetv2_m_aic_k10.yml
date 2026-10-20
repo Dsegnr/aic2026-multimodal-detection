@@ -1,0 +1,57 @@
+# Arm 2：D-FINE-M @1280 + 稀类过采样 k10 + /dev/shm 缓存
+#
+# ★ 架构块**逐字取自官方** configs/dfine/objects365/dfine_hgnetv2_m_obj2coco.yml，
+#   不再手写。9/24 那次 M 臂输出退化（0.0000、2.2 框/图）的最可能根因是两处：
+#     ① HybridEncoder.expansion 被写成 S 版的 0.5（官方 M 不写这行 ⇒ 继承 include 的 1.0）；
+#     ② eval_spatial_size 继承了官方的 [640,640]，而我们按 1280 训练。
+#   本文件把这两条都纠正：expansion 不写（继承 1.0），eval_spatial_size 按 S 版验证过的写法
+#   （顶层 null + HybridEncoder 段 [1280,1280]）。
+#
+# 其余（数据集/类别/轮数/输出目录）才是我方改动，且只改这三处。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b6.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_m_aic_k10_cache
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+# ↓↓↓ 官方 M obj2coco 逐字
+HGNetv2:
+  name: 'B2'
+  return_idx: [1, 2, 3]
+  freeze_at: -1
+  freeze_norm: False
+  use_lab: True
+
+DFINETransformer:
+  num_layers: 4
+  eval_idx: -1
+
+HybridEncoder:
+  in_channels: [384, 768, 1536]
+  hidden_dim: 256
+  depth_mult: 0.67
+  eval_spatial_size: [1280, 1280]
+# ↑↑↑ 官方块（除 eval_spatial_size 这一行按我们 1280 训练设置）
+
+epochs: 32
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 26
+  collate_fn:
+    stop_epoch: 26
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

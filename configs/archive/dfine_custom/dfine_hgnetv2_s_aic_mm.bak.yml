@@ -1,0 +1,51 @@
+# Arm：D-FINE-S @1280 + **多模态（6 通道：可见光 + 红外/深度/掩码）**，48 轮
+# 与纯 RGB 配方（saug48 / k10）**逐字同源**，唯一变量 = 模型改成 MMDFINE（含零初始化门控融合）。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_mm_cache_b8.yml',
+]
+
+model: MMDFINE
+output_dir: ./output/dfine_hgnetv2_s_aic_mm
+eval_spatial_size: null
+
+MMDFINE:
+  aux_channels: 3
+  aux_width: 64
+  feat_channels: [256, 512, 1024]
+
+HGNetv2:
+  name: 'B0'
+  return_idx: [1, 2, 3]
+  freeze_at: -1
+  freeze_norm: False
+  use_lab: True
+
+DFINETransformer:
+  num_layers: 6
+  eval_idx: -1
+
+HybridEncoder:
+  in_channels: [256, 512, 1024]
+  hidden_dim: 256
+  depth_mult: 0.34
+  expansion: 0.5
+  eval_spatial_size: [1280, 1280]
+
+epochs: 48
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 40
+  collate_fn:
+    stop_epoch: 40
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

@@ -1,0 +1,43 @@
+# Arm：D-FINE-L @**1536** + k10（1700 张）+ **24 轮**
+# 与 dfine_hgnetv2_l_aic_k10_1536.yml 的唯一差别 = epochs 16→24、policy/stop_epoch 12→18
+# 动机：逐类诊断显示失分集中在 **AP75/AP90/AP95**（ball 27.5/16.8，person 54.8/16.0，car 54.9/15.1 …），
+#       这是"高 IoU 定位"问题 ⇒ ① 更大输入尺度（1536，训练与推理同尺度）② 更长日程，两者都是对症的。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b2_1536.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_k10_1536_24e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1536, 1536]
+
+epochs: 24
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 18
+  collate_fn:
+    stop_epoch: 18
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

@@ -1,0 +1,52 @@
+# Arm：D-FINE-L（HGNetv2-B4，Objects365+COCO，官方 COCO 57.3）@1280 + 稀类 k10（1700 张）
+# 动机：我们的失效模式已定位为"高 IoU 段（AP75/AP90）的排序与回归质量"，
+#       而 S→M 的容量增量在本地口径无增益 ⇒ 用**官方 L 架构逐字**+官方微调学习率再试一次容量轴。
+#
+# 与官方 configs/dfine/objects365/dfine_hgnetv2_l_obj2coco.yml 的差别**只有三处**：
+#   ① 数据集 include 换成我们的 aic_detection_rare_k10_cache_b4.yml（12 类、/dev/shm 缓存、k10 过采样）
+#   ② 顶层 eval_spatial_size: null + HybridEncoder.eval_spatial_size: [1280,1280]（我们按 1280 训练/评测）
+#   ③ 轮数 36 → **16**（时间盒：B4@1280 batch 2 约 25~35 min/轮，一夜跑得完）
+#   ④ 数据集改用 batch 2 版（B4@1280 在 24 GB 卡上 batch 4 有 OOM 风险）
+# 其余（HGNetv2 的 B4/freeze_stem_only/freeze_at/freeze_norm、HybridEncoder 全部超参、
+#       DFINETransformer 6 层、optimizer 的 1.25e-5/2.5e-4）**全部继承官方**，不手写。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_k10
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+# ↓↓↓ 官方 L obj2coco 逐字
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+# ↑↑↑ 官方块
+
+HybridEncoder:
+  eval_spatial_size: [1280, 1280]   # 唯一改动：官方继承 [640,640]
+
+epochs: 16
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 12
+  collate_fn:
+    stop_epoch: 12
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

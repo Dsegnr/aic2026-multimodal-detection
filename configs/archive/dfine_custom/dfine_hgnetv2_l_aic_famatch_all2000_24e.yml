@@ -1,0 +1,42 @@
+# Arm：D-FINE-L @1280 + **family-matched 全 2000 张** + 24 轮
+# 把两个"证据为正"的轴叠起来：① 按测试集家族构成重采样（num6/num8 加权）② 全 2000 张（+18% 数据）
+# ⚠️ 含官方 val ⇒ 本地口径失效，只能靠榜分
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_famatch_all2000_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_famatch_all2000_24e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1280, 1280]
+
+epochs: 24
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 18
+  collate_fn:
+    stop_epoch: 18
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

@@ -1,0 +1,62 @@
+# Arm（第二台 4090 · Track A）：D-FINE-X（B5，官方 COCO 59.3）@1280 + **全 2000 张** + 24 轮
+# 把三件已被验证/半验证的事叠起来：① 最大底座（X）② 全 2000 张数据（+18%）③ 24 轮日程
+# 与第一台的臂互不重复；⚠️ 含官方 val ⇒ 本地口径失效，只能靠榜分
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_all2000_k10_cache_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_x_aic_all2000_24e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B5'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  hidden_dim: 384
+  dim_feedforward: 2048
+  eval_spatial_size: [1280, 1280]
+
+DFINETransformer:
+  feat_channels: [384, 384, 384]
+  reg_scale: 8
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.0000025
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn)).*$'
+      weight_decay: 0.
+
+  lr: 0.00025
+  betas: [0.9, 0.999]
+  weight_decay: 0.000125
+
+epochs: 24
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 18
+  collate_fn:
+    stop_epoch: 18
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

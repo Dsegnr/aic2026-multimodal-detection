@@ -1,0 +1,43 @@
+# Arm：D-FINE-L @1280 + k10（1700 张），**24 轮**（把 16 轮日程拉长）
+# 动机：L 的 16 轮曲线到最后一轮还在涨（ep14 0.571 → ep15 0.573），尾段没吃满；
+#       同族 S 臂在 48 轮里 "切增广 + 退火" 还能再涨 3 分，所以给 L 更长日程值得。
+# 与 dfine_hgnetv2_l_aic_k10.yml 的唯一差别 = epochs 16→24、policy/stop_epoch 12→18。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_k10_24e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1280, 1280]
+
+epochs: 24
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 18
+  collate_fn:
+    stop_epoch: 18
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

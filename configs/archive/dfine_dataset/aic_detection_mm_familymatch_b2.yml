@@ -1,0 +1,60 @@
+# 多模态（6 通道）family-match 数据集：可见光 + 辅助图（IR/深度/掩码合成 3 通道 PNG）。
+# 与 aic_detection_mm_cache_b8.yml 的唯一差别 = train ann_file 换成 train_familymatch.json；
+# batch 调到 2（B5/X 大底座 + 6 通道显存更紧）。
+task: detection
+
+evaluator:
+  type: CocoEvaluator
+  iou_types: ['bbox', ]
+
+num_classes: 12
+remap_mscoco_category: False
+
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: MMCocoDetection
+    img_folder: ./data/images
+    aux_folder: /dev/shm/aic_aux
+    ann_file: ./data/aic_coco/train_familymatch.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: RandomZoomOut, fill: 0}
+        - {type: RandomIoUCrop, p: 0.6}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: RandomHorizontalFlip}
+        - {type: Resize, size: [1280, 1280]}
+        - {type: SanitizeBoundingBoxes, min_size: 1}
+        - {type: ScaleMMImage, dtype: 'float32', scale: True}
+        - {type: ConvertBoxes, fmt: 'cxcywh', normalize: True}
+  shuffle: True
+  num_workers: 16
+  drop_last: True
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+    base_size_repeat: 3
+  total_batch_size: 2
+
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: MMCocoDetection
+    img_folder: ./data/images
+    aux_folder: /dev/shm/aic_aux
+    ann_file: ./data/aic_coco/val.json
+    return_masks: False
+    transforms:
+      type: Compose
+      ops:
+        - {type: Resize, size: [1280, 1280]}
+        - {type: ScaleMMImage, dtype: 'float32', scale: True}
+  shuffle: False
+  num_workers: 8
+  drop_last: False
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 1280
+  total_batch_size: 4

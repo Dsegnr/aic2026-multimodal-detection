@@ -1,0 +1,54 @@
+# Arm：D-FINE-S @1280 + 稀类 k10 + **P2 小目标层**（把骨干 stride-4 层也接进编码器/解码器）
+# 动机（我们自己的逐类诊断）：bicycle 43.4 / ball 41.5 最弱，且 AP50(74~100) 远高于 AP50-95(41~70)
+#   ⇒ 瓶颈是"小目标的高 IoU 定位"。当前只用 P3/P4/P5（stride 8/16/32），加 P2（stride 4）是对症改动。
+# 除 return_idx / in_channels / feat_strides / num_levels 外，其余与榜验证配方逐字相同。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_rare_k10_cache_b8.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_s_aic_k10_p2
+eval_spatial_size: null
+
+HGNetv2:
+  name: 'B0'
+  return_idx: [0, 1, 2, 3]
+  freeze_at: -1
+  freeze_norm: False
+  use_lab: True
+
+DFINETransformer:
+  num_layers: 6
+  eval_idx: -1
+  feat_channels: [256, 256, 256, 256]
+  feat_strides: [4, 8, 16, 32]
+  num_levels: 4
+  num_points: [3, 3, 6, 3]      # 与 include 的 [3,6,3] 同构，只是多插一层 P2
+
+HybridEncoder:
+  in_channels: [64, 256, 512, 1024]   # stage0 实测是 64 通道（自检报错抓到的），不是 128
+  hidden_dim: 256
+  depth_mult: 0.34
+  expansion: 0.5
+  feat_strides: [4, 8, 16, 32]
+  use_encoder_idx: [3]
+  eval_spatial_size: [1280, 1280]
+
+epochs: 24                  # P2@1280 每轮约 16~20 min，时间盒 24 轮
+train_dataloader:
+  total_batch_size: 2        # P2@1280 的 320x320 特征图很吃显存，batch 降到 4
+  dataset:
+    transforms:
+      policy:
+        epoch: 20
+  collate_fn:
+    stop_epoch: 20
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

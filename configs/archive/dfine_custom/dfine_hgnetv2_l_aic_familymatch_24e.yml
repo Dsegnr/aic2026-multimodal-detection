@@ -1,0 +1,45 @@
+# Arm：D-FINE-L @1280 + **按测试集家族构成重采样**的数据 + 24 轮
+# 动机（2026-09-30 实测）：val300 里"shuming"占 18%（我们 AP 66.7），而测试集里只占 5.4%；
+#   测试集的 61.3% 是"num6"（我们 AP 只有 53.8）、11.7% 是"num8"（AP 49.9）。
+#   按测试集构成加权后本地分从 58.73 掉到 55.90 ⇒ 本地虚高里约 2.8 分来自**家族构成差异**。
+#   因此把训练集的家族占比改成"与测试集一致"（num6 ×1.33、num8 ×2.64、shuming ×0.31），
+#   让模型把容量花在测试集真正会考的家族上。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_familymatch_b2.yml',
+]
+
+output_dir: ./output/dfine_hgnetv2_l_aic_familymatch_24e
+eval_spatial_size: null
+
+DFINE:
+  backbone: HGNetv2
+
+HGNetv2:
+  name: 'B4'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+HybridEncoder:
+  eval_spatial_size: [1280, 1280]
+
+epochs: 24
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 18
+  collate_fn:
+    stop_epoch: 18
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0

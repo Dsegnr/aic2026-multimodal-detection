@@ -1,0 +1,71 @@
+# X/B5 大模型 + 单模态组（RGB + IR/深度/掩码）6 通道：从 X32 ep23 last 出发，
+# 零初始化门控微调 4 轮；gate=0 时输出严格等于 RGB 冠军，aux 只学小幅残差。
+__include__: [
+  '../../runtime.yml',
+  '../include/dataloader.yml',
+  '../include/optimizer.yml',
+  '../include/dfine_hgnetv2.yml',
+  '../../dataset/aic_detection_mm_familymatch_b2.yml',
+]
+
+model: MMDFINE
+output_dir: ./output/dfine_hgnetv2_x_aic_mm_familymatch_4e
+eval_spatial_size: null
+
+MMDFINE:
+  backbone: HGNetv2
+  encoder: HybridEncoder
+  decoder: DFINETransformer
+  aux_channels: 3
+  aux_width: 64
+  feat_channels: [384, 384, 384]
+
+HGNetv2:
+  name: 'B5'
+  return_idx: [1, 2, 3]
+  freeze_stem_only: True
+  freeze_at: 0
+  freeze_norm: True
+
+DFINETransformer:
+  feat_channels: [384, 384, 384]
+  reg_scale: 8
+
+HybridEncoder:
+  hidden_dim: 384
+  dim_feedforward: 2048
+  eval_spatial_size: [1280, 1280]
+
+optimizer:
+  type: AdamW
+  params:
+    -
+      params: '^(?=.*backbone)(?!.*norm|bn).*$'
+      lr: 0.000001
+    -
+      params: '^(?=.*(?:encoder|decoder))(?=.*(?:norm|bn)).*$'
+      weight_decay: 0.
+    -
+      params: '^.*(aux_stem|aux_proj|gates).*$'
+      lr: 0.0001
+  lr: 0.000025
+  betas: [0.9, 0.999]
+  weight_decay: 0.000125
+
+epochs: 4
+train_dataloader:
+  dataset:
+    transforms:
+      policy:
+        epoch: 3
+  collate_fn:
+    stop_epoch: 4
+    ema_restart_decay: 0.9999
+
+ema:
+  warmups: 0
+
+lr_warmup_scheduler:
+  warmup_duration: 0
+
+num_visualization_sample_batch: 0
